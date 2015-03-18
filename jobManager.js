@@ -1,17 +1,22 @@
 /**
- * creepFactory
+ * Job Manager.js
  */
-//var jobManager = {
-addToList: function(name, role, jobmemory) {
-if(jobmemory===undefined) {
-jobmemory = {};
-}
-Memory.jobList.push({
-   name: name,
-role: role,
-jobmemory: jobmemory
-});
-},
+
+
+var jobManager = {
+    
+    
+    addToList: function(name, role, jobmemory) {
+        if(jobmemory===undefined) {
+            jobmemory = {};
+        }
+        Memory.jobList.push({
+            name: name,
+            role: role,
+            jobmemory: jobmemory
+        });
+    },
+    
 //Function to create memory structure for Roles/Creeps for new job
 handleCreepActions: function(spawn,job,role,spot) {
                             var creep = Game.getObjectById(job.jobmemory[role][spot]);
