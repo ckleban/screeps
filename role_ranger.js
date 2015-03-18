@@ -20,7 +20,7 @@ var role_ranger = {
  	attack_source: function(creep,job,spot) {
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
         
-    } 
+    }, 
  
  	wallofranged: function(creep,job,spot) {
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
