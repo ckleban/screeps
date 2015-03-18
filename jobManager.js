@@ -1,7 +1,7 @@
 /**
  * creepFactory
  */
- var jobManager = {
+//var jobManager = {
 addToList: function(name, role, jobmemory) {
 if(jobmemory===undefined) {
 jobmemory = {};
