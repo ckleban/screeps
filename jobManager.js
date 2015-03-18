@@ -9,7 +9,7 @@ var jobManager = {
         if(jobmemory===undefined) {
             jobmemory = {};
         }
-        Memory.jobList.push({
+        spawn.memory.joblist.push({
             name: name,
             role: role,
             jobmemory: jobmemory
@@ -88,10 +88,10 @@ var jobManager = {
     
     action: function (spawn) {
 
-        if(!Memory.jobList) {
+        if(!spawn.memory.jobList) {
 
             console.log("NEW GAME-No JOB MEMORY FOUND");
-            Memory.jobList = new Array();
+            spawn.memory.jobList = new Array();
             var source = spawn.pos.findNearest(Game.SOURCES);
             this.addToList('mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
             this.addToList('mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});
@@ -102,8 +102,8 @@ var jobManager = {
 
 
         //console.log (" - Jobs: "+Memory.jobList.length);
-        for (var i in Memory.jobList) {
-            var job = Memory.jobList[i];
+        for (var i in spawn.memory.joblist) {
+            var job = spawn.memory.joblist[i];
             
             
             if (job.role=='mine_normal'){
