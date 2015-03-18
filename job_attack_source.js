@@ -1,8 +1,8 @@
 /**
- * creepFactory
+ * Job to attack and hold a source that is protected. 
  */
- var job_mine_normal = {
 
+ var job_attack_source = {
 
 
 //untested
@@ -31,7 +31,7 @@
          
          
             
-        var  roles=['miner','mover'];
+        var  roles=['healer','ranger'];
         for (var i in roles){
             var role = roles[i];
        
@@ -89,4 +89,4 @@
 
  };
 
-module.exports = job_mine_normal;
+module.exports = job_attack_source;

@@ -61,6 +61,18 @@ for (var i in Game.spawns) {
         }
         console.log("over 1000!!!!!!!!!!!!!!!!!");
     }
+    
+    
+    // Attack close source. 
+    if (spawn.energy>3000 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
+        console.log("over 3000!!!!!!!!!!!!!!!!!");
+        require('jobManager').addToList('attack_sourc1', 'attack_source', {rangers:0,healers:1,x:44,y:26,direction_x:1,healers_y:1});
+    }
+    
+    
+    
+    
+    
     if (Game.time % 403 === 0 && Game.time > 200){
     //if (spawn.energy>1000 && spawn.memory.buildQueue.length < 1 && Memory.jobList[0].rangers<7) {
        // require('spawnManager').addToQueue(spawn,"healer");
