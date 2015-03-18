@@ -6,10 +6,12 @@
 var jobManager = {
     
     addToList: function(spawn, name, role, jobmemory) {
+   
+        
         if(jobmemory===undefined) {
             jobmemory = {};
         }
-        spawn.memory.joblist.push({
+        spawn.memory.jobList.push({
             name: name,
             role: role,
             jobmemory: jobmemory
