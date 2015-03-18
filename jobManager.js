@@ -105,8 +105,8 @@ var jobManager = {
 
 
         //console.log (" - Jobs: "+Memory.jobList.length);
-        for (var i in spawn.memory.joblist) {
-            var job = spawn.memory.joblist[i];
+        for (var i in spawn.memory.jobList) {
+            var job = spawn.memory.jobList[i];
             
             
             if (job.role=='mine_normal'){
