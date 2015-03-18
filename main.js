@@ -1,5 +1,11 @@
+// Screeps script by Chris Kleban
+//
+// This is the main loop file that runs every time interval in the screeps game. 
+//
 
-Game.memory=null;
+
+
+//Game.memory=null;
 var _ = require('lodash');
 
 
