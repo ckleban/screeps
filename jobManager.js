@@ -5,7 +5,7 @@
 
 var jobManager = {
     
-    addToList: function(spawn,name, role, jobmemory) {
+    addToList: function(spawn, name, role, jobmemory) {
         if(jobmemory===undefined) {
             jobmemory = {};
         }
@@ -87,7 +87,8 @@ var jobManager = {
     
     
     action: function (spawn) {
-
+		
+		console.log("job loop");
         if(!spawn.memory.jobList) {
 
             console.log("NEW GAME-No JOB MEMORY FOUND");
