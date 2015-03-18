@@ -14,6 +14,7 @@ var jobManager = {
         spawn.memory.jobList.push({
             name: name,
             role: role,
+            health: 'new',
             jobmemory: jobmemory
         });
     },

@@ -58,11 +58,11 @@ for (var i in Game.spawns) {
         var source = spawn.pos.findNearest(Game.SOURCES);    
         require('jobManager').addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
     } 
-    if (spawn.memory.jobList.length==1 && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
+    if (spawn.memory.jobList.length==1 && spawn.memory.jobList[0].health='healthy' && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
         var source = spawn.pos.findNearest(Game.SOURCES);
         require('jobManager').addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});   
     } 
-    if (spawn.memory.jobList.length==2 && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
+    if (spawn.memory.jobList.length==2 && spawn.memory.jobList[1].health='healthy'&& spawn.energy>802 && spawn.memory.buildQueue.length < 2){
         require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
     }     
 
