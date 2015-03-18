@@ -66,7 +66,7 @@ for (var i in Game.spawns) {
     // Attack close source. 
     if (spawn.energy>3000 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
         console.log("over 3000!!!!!!!!!!!!!!!!!");
-        require('jobManager').addToList('attack_source1', 'attack_source', {rangers:0,healers:1,x:44,y:26,direction_x:1,healers_y:1});
+        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:0,healers:1,x:44,y:26,direction_x:1,healers_y:1});
     }
     
     
