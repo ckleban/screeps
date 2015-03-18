@@ -90,15 +90,15 @@ var jobManager = {
     
     action: function (spawn) {
 		
-		console.log("job loop");
+		//console.log("job loop");
         if(!spawn.memory.jobList) {
 
             console.log("NEW GAME-No JOB MEMORY FOUND");
             spawn.memory.jobList = new Array();
-            var source = spawn.pos.findNearest(Game.SOURCES);
-            this.addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
-            this.addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});
-            this.addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
+            //var source = spawn.pos.findNearest(Game.SOURCES);
+            //this.addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
+            //this.addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});
+            //this.addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
             
         }
 

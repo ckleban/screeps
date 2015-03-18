@@ -50,14 +50,32 @@ for (var i in Game.spawns) {
     require('spawnManager').action(spawn);
     require('jobManager').action(spawn);
     
+    
+    
+    // Job logic
+    
+    if (spawn.memory.jobList.length==0){
+        require('jobManager').addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
+    } 
+    if (spawn.memory.jobList.length==1 && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
+        require('jobManager').addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});   
+    } 
+    if (spawn.memory.jobList.length==2 && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
+        require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
+    }     
+
+    
+    
+    
+    
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
     if (spawn.energy>1002 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
          console.log("over 1000!!!!!!!!!!!!!!!!!");
-        if (Memory.jobList[2].jobmemory.healers<7) {
+        if (spawn.memory.jobList[2].jobmemory.healers<7) {
             require('job_wallofranged').increase(spawn,Memory.jobList[2],1,'healer');
         }
-        if (Memory.jobList[2].jobmemory.rangers<7) {
+        if (spawn.memory.jobList[2].jobmemory.rangers<7) {
             require('job_wallofranged').increase(spawn,Memory.jobList[2],1,'ranger');
         }
        
