@@ -55,9 +55,11 @@ for (var i in Game.spawns) {
     // Job logic
     
     if (spawn.memory.jobList.length==0){
+        var source = spawn.pos.findNearest(Game.SOURCES);    
         require('jobManager').addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
     } 
     if (spawn.memory.jobList.length==1 && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
+        var source = spawn.pos.findNearest(Game.SOURCES);
         require('jobManager').addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});   
     } 
     if (spawn.memory.jobList.length==2 && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
