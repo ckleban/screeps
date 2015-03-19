@@ -58,18 +58,18 @@ for (var i in Game.spawns) {
         var source = spawn.pos.findNearest(Game.SOURCES);    
         require('jobManager').addToList(spawn,'mine_normal1', 'mine_normal', {miners:1,movers:2,source:source.id});
     } 
-    if (spawn.memory.jobList.length==1 && spawn.memory.jobList[0].health=='healthy' && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
+    if (spawn.memory.jobList.length==1 && spawn.memory.jobList[0].jobmemory.health=='healthy' && spawn.energy>402 && spawn.memory.buildQueue.length < 2){
         var source = spawn.pos.findNearest(Game.SOURCES);
         require('jobManager').addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:2,source:source.id});   
     } 
-    if (spawn.memory.jobList.length==2 && spawn.memory.jobList[1].health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
+    if (spawn.memory.jobList.length==2 && spawn.memory.jobList[1].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
         require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
     }     
 
     
     
     
-    
+    /*
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
     if (spawn.energy>1002 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
@@ -82,7 +82,7 @@ for (var i in Game.spawns) {
         }
        
     }
-    
+    */
     
     // Attack close source. 
     if (spawn.energy>3000 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
