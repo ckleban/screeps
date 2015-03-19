@@ -42,7 +42,7 @@ var role_mover = {
  
  
  
- 	mine_normal: function(creep,job,spot) {
+ 	mine_normal: function(creep,job,spot,spawn) {
         //creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
         
         if(creep.energy < 1) {
@@ -54,8 +54,10 @@ var role_mover = {
     
     	
    	    } else {
-		  creep.moveTo(Game.spawns.Spawn1);
-	 	  creep.transferEnergy(Game.spawns.Spawn1);
+            //creep.moveTo(Game.spawns.Spawn1);
+            //creep.transferEnergy(Game.spawns.Spawn1);
+            creep.moveTo(spawn);
+            creep.transferEnergy(spawn);
 	    }
     }
 };

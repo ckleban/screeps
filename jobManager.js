@@ -32,7 +32,7 @@ var jobManager = {
             return(0);
         } else { // if alive, move to spot
             //console.log('Creep ALIVE ID:' + job.jobmemory.ranger[x]);
-            require('role_'+role)[job.role](creep,job,spot);
+            require('role_'+role)[job.role](creep,job,spot,spawn);
             // numCreeps++;
             return(1);
         }
