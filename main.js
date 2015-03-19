@@ -69,10 +69,10 @@ for (var i in Game.spawns) {
     
     
     
-    /*
+    
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
-    if (spawn.energy>1002 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
+    if (spawn.energy>1002 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
          console.log("over 1000!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[2].jobmemory.healers<7) {
             require('job_wallofranged').increase(spawn,Memory.jobList[2],1,'healer');
@@ -82,7 +82,7 @@ for (var i in Game.spawns) {
         }
        
     }
-    */
+    
     
     // Attack close source. 
     if (spawn.energy>3000 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
