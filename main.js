@@ -83,6 +83,14 @@ for (var i in Game.spawns) {
         }
     }   
     
+    // move source attack in/out of position based on various factors
+    
+    if (spawn.memory.jobList.length>3 && spawn.memory.jobList[3].jobmemory.health=='healthy'){
+        spawn.memory.jobList[3].jobmemory.x=44;
+    } else {
+        spawn.memory.jobList[3].jobmemory.x=46;       
+    }
+    
     
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
