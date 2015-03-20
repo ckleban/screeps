@@ -79,7 +79,7 @@ for (var i in Game.spawns) {
             require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'healer');
         } 
         if (spawn.memory.jobList[3].jobmemory.rangers<1) {
-            require('job_attach_source').increase(spawn,spawn.memory.jobList[3],1,'ranger');
+            require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'ranger');
         }
     }   
     
