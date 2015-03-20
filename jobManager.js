@@ -119,7 +119,7 @@ var jobManager = {
                 require('job_wallofranged').action(spawn,job);
             }
             if (job.role=='attack_source'){
-                require('job_attach_source').action(spawn,job);
+                require('job_attack_source').action(spawn,job);
             }
             
         }
