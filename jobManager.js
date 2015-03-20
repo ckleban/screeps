@@ -30,7 +30,7 @@ var jobManager = {
             job.jobmemory[role].splice(spot,1);
             job.jobmemory.health = 'death';
             return(0);
-        } else { // if alive, move to spot
+        } else { // if alive, move to spot  q
             //console.log('Creep ALIVE ID:' + job.jobmemory.ranger[x]);
             require('role_'+role)[job.role](creep,job,spot,spawn);
             // numCreeps++;
@@ -108,20 +108,23 @@ var jobManager = {
         //console.log (" - Jobs: "+Memory.jobList.length);
         for (var i in spawn.memory.jobList) {
             var job = spawn.memory.jobList[i];
-            
-            
+               
+               
             if (job.role=='mine_normal'){
                 require('job_mine_normal').action(spawn,job);
             } 
-
-
-        if (job.role=='wallofranged'){
-            require('job_wallofranged').action(spawn,job);
-        }
+            
+            
+            if (job.role=='wallofranged'){
+                require('job_wallofranged').action(spawn,job);
+            }
+            if (job.role=='attack_source'){
+                require('job_attach_source').action(spawn,job);
+            }
             
         }
     }
-};
+    };
 
 module.exports = jobManager;
 
