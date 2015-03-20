@@ -57,7 +57,7 @@ var role_healer = {
         if(targets.length > 0) {
             var best_target = targets[0];
             for (var l in targets) {
-                var target = targets[i];
+                var target = targets[l];
                 if ((best_target.hitsMax+best_target.hits)>(target.hitsMax+target.hits)) {
                    best_target = target;
                 }

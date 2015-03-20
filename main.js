@@ -99,10 +99,10 @@ for (var i in Game.spawns) {
        // require('spawnManager').addToQueue(spawn,"healer");
         
     }
-    if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers>5) {
+    //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers>5) {
         //require('job_wallofranged').decrease(spawn,Memory.jobList[0],1);
-        console.log("decreasing!!!!!!!!! 1");
-    }
+      //  console.log("decreasing!!!!!!!!! 1");
+    //}
     
     /*
     if (spawn.energy>4000 && spawn.memory.buildQueue.length < 1 && Memory.jobList[0].rangers>4) {
