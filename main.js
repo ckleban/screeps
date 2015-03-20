@@ -66,7 +66,7 @@ for (var i in Game.spawns) {
         require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:1,x:37,y:5,direction_x:1,healers_y:1});
     }     
     if (spawn.memory.jobList.length==3 && spawn.memory.jobList[2].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
-        require('jobManager').addToList(spawn,'attack_source1', 'attach_source', {rangers:0,healers:2,x:44,y:22,direction_x:1,healers_y:1});
+        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:0,healers:2,x:44,y:22,direction_x:1,healers_y:1});
     }     
 
     
