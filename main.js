@@ -94,6 +94,7 @@ for (var i in Game.spawns) {
     }
     
     
+    
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
     if (spawn.energy>1002 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
