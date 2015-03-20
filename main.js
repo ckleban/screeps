@@ -76,10 +76,10 @@ for (var i in Game.spawns) {
     if (spawn.energy>800 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>3) {
         console.log("over 800!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[3].jobmemory.healers<2) {
-            require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'healer');
+            require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'healer');
         } 
         if (spawn.memory.jobList[3].jobmemory.rangers<1) {
-            require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'ranger');
+            require('job_attach_source').increase(spawn,spawn.memory.jobList[3],1,'ranger');
         }
     }   
     
