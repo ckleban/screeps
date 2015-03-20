@@ -63,7 +63,7 @@ var role_healer = {
                 }
             }
             
-            creep.rangedAttack(best_target);
+            creep.rangedHeal(best_target);
         }   
 
         
