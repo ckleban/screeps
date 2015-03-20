@@ -45,7 +45,31 @@ var role_healer = {
  
     wallofranged: function(creep,job,spot) {
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
-        var target = creep.pos.findClosest(Game.MY_CREEPS, {
+        
+        
+        //Logic to find creep in range that has lowest health
+        var targets = creep.pos.findInRange(Game.MY_CREEPS, 3, {
+			filter: function(object) {
+				return object.hits < object.hitsMax;
+			}
+		});
+        
+        if(targets.length > 0) {
+            var best_target = targets[0];
+            for (var l in targets) {
+                var target = targets[i];
+                if ((best_target.hitsMax+best_target.hits)>(target.hitsMax+target.hits)) {
+                   best_target = target;
+                }
+            }
+            
+            creep.rangedAttack(best_target);
+        }   
+
+        
+        
+        //Logic to find nearest creep that needs healing
+        /*var target = creep.pos.findClosest(Game.MY_CREEPS, {
             filter: function(object) {
                 return object.hits < object.hitsMax;
 			}
@@ -56,6 +80,7 @@ var role_healer = {
 		} else {
 			//this.idleDefence(creep);
 		}
+        */
 		
     }
 };
