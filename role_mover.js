@@ -45,7 +45,7 @@ var role_mover = {
  	mine_normal: function(creep,job,spot,spawn) {
         //creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
         
-        if(creep.energy < 1) {
+        if(creep.energy < creep.energyCapacity) {
             var miner = Game.getObjectById(job.jobmemory.miner[0]);
 	        var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
 		    creep.moveTo(miner);
