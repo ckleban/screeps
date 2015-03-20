@@ -87,10 +87,10 @@ for (var i in Game.spawns) {
     
     if (spawn.memory.jobList.length>3 && spawn.memory.jobList[3].jobmemory.health=='healthy'){
         console.log("attack!");
-        spawn.memory.jobList[3].jobmemory.y=25;
+        spawn.memory.jobList[3].jobmemory.y=24;
     } else {
         console.log("retreat!");
-        spawn.memory.jobList[3].jobmemory.y=23;       
+        spawn.memory.jobList[3].jobmemory.y=22;       
     }
     
     
