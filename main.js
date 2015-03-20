@@ -63,25 +63,40 @@ for (var i in Game.spawns) {
         require('jobManager').addToList(spawn,'mine_normal2', 'mine_normal', {miners:1,movers:1,source:source.id});   
     } 
     if (spawn.memory.jobList.length==2 && spawn.memory.jobList[1].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
-        require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:0,x:37,y:5,direction_x:1,healers_y:1});
+        require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:1,x:37,y:5,direction_x:1,healers_y:1});
+    }     
+    if (spawn.memory.jobList.length==3 && spawn.memory.jobList[2].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
+        require('jobManager').addToList(spawn,'attack_source1', 'attach_source', {rangers:0,healers:2,x:44,y:22,direction_x:1,healers_y:1});
     }     
 
     
     
     
     
+    if (spawn.energy>800 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
+        console.log("over 800!!!!!!!!!!!!!!!!!");
+        if (spawn.memory.jobList[3].jobmemory.healers<2) {
+            require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'healer');
+        } 
+        if (spawn.memory.jobList[3].jobmemory.rangers<1) {
+            require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'ranger');
+        }
+    }   
+    
+    
     // If spare energy is high, increase wall size by 1
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers<7){
     if (spawn.energy>1002 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
-         console.log("over 1000!!!!!!!!!!!!!!!!!");
+        console.log("over 1000!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[2].jobmemory.healers<7) {
             require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'healer');
-        }
+        } 
         if (spawn.memory.jobList[2].jobmemory.rangers<7) {
             require('job_wallofranged').increase(spawn,spawn.memory.jobList[2],1,'ranger');
         }
-       
     }
+
+    
     
     
     // Attack close source. 
@@ -94,11 +109,11 @@ for (var i in Game.spawns) {
     
     
     
-    if (Game.time % 403 === 0 && Game.time > 200){
+    //if (Game.time % 403 === 0 && Game.time > 200){
     //if (spawn.energy>1000 && spawn.memory.buildQueue.length < 1 && Memory.jobList[0].rangers<7) {
        // require('spawnManager').addToQueue(spawn,"healer");
         
-    }
+    //}
     //if (Game.time % 200 === 0 && Memory.jobList[0].jobmemory.rangers>5) {
         //require('job_wallofranged').decrease(spawn,Memory.jobList[0],1);
       //  console.log("decreasing!!!!!!!!! 1");
@@ -112,9 +127,9 @@ for (var i in Game.spawns) {
     
     */
     
-    if (Game.time % 200 === 0 && Memory.jobList[0].rangers<7){
+    //if (Game.time % 200 === 0 && Memory.jobList[0].rangers<7){
     //     require('job_wallofranged').increase(spawn,Memory.jobList[0],1);
-    }
+    //}
     
     
     

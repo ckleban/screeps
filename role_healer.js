@@ -24,7 +24,7 @@ var role_healer = {
 		
     },
  
-    attack_source: function(creep) {
+    attack_source: function(creep,job,spot) {
         
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
         var target = creep.pos.findClosest(Game.MY_CREEPS, {
