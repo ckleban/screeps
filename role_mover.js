@@ -31,7 +31,7 @@ var role_mover = {
             var source = Game.getObjectById(job.jobmemory.source);
             var miner = Game.getObjectById(job.jobmemory.miner[0]);
 	        var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
-		    creep.moveTo(spawn);
+		    creep.moveTo(miner);
 		    creep.pickup(target);
 		
     
