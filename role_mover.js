@@ -31,7 +31,7 @@ var role_mover = {
         var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
 		    
         // if miner isn't in danger
-        if (creep.energy < creep.energyCapacity && job.jobmemory.danger=="false") {
+        if (miner && creep.energy < creep.energyCapacity && job.jobmemory.danger=="false") {
             
             // check if miner is near the source
             var targets = miner.pos.findInRange(Game.SOURCES, 1);
