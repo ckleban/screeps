@@ -26,9 +26,13 @@ var role_miner = {
 		});
         
         if(targets.length > 0) {
-            creep.moveTo(source.pos.x,source.pos.y-8);
-            job.jobmemory.danger="true";
-        
+            if (targets[0].hits>49){
+                creep.moveTo(source.pos.x,source.pos.y-8);
+                job.jobmemory.danger="true";
+            } else {
+                job.jobmemory.danger="false";
+                creep.moveTo(source);
+            }
         } else {
             job.jobmemory.danger="false";
             creep.moveTo(source);
