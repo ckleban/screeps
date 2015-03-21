@@ -78,7 +78,7 @@
 		    
 		   	if (baby.role=='ranger'){
                 baby.creepMemory.role='ranger';
-                var result = spawn.createCreep([Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE], null, baby.creepMemory);
+                var result = spawn.createCreep([Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.TOUGH,Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE], null, baby.creepMemory);
 		    }		    
 		    		    
         
