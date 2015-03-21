@@ -66,7 +66,12 @@ for (var i in Game.spawns) {
         require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:2,healers:1,x:37,y:5,direction_x:1,healers_y:1});
     }     
     if (spawn.memory.jobList.length==3 && spawn.memory.jobList[2].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
-        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:0,healers:2,x:44,y:22,direction_x:1,healers_y:1});
+        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:0,healers:3,x:44,y:22,direction_x:1,healers_y:1});
+    }     
+    if (spawn.memory.jobList.length==4 && spawn.memory.jobList[3].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
+        var source = spawn.memory.jobList[3].jobmemory.ranger[0].pos.findNearest(Game.SOURCES);
+        //var source = spawn.pos.findNearest(Game.SOURCES);
+        require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:1,source:source.id});   
     }     
 
     
@@ -75,7 +80,7 @@ for (var i in Game.spawns) {
     
     if (spawn.energy>800 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>3) {
         console.log("over 800!!!!!!!!!!!!!!!!!");
-        if (spawn.memory.jobList[3].jobmemory.healers<2) {
+        if (spawn.memory.jobList[3].jobmemory.healers<3) {
             require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'healer');
         } 
         if (spawn.memory.jobList[3].jobmemory.rangers<1) {
