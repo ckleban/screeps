@@ -26,7 +26,10 @@ var role_miner = {
         
         if(targets.length > 0) {
             creep.moveTo(spawn);
+            job.jobmemory.danger="true";
+        
         } else {
+            job.jobmemory.danger="false";
             creep.moveTo(source);
         }
         
