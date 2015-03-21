@@ -93,7 +93,7 @@ for (var i in Game.spawns) {
  
     if (spawn.energy>300 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
         console.log("over 900!!!!!!!!!!!!!!!!!");
-        if (spawn.memory.jobList[4].jobmemory.movers<8) {
+        if (spawn.memory.jobList[4].jobmemory.movers<6) {
             console.log("more movers!");
             require('job_mine_normal').increase(spawn,spawn.memory.jobList[4],1,'mover');
         } 
