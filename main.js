@@ -19,19 +19,20 @@ for (var ii in Game.rooms){
         room.memory.init='true';
         Game.memory=null;
     } 
-    
+    objects=Game.rooms[ii].lookAt(47,29);
+    console.log(objects);
 }
 
 
 
 
 //console.log(Game.time);
-if (Game.time<1){
+//if (Game.time<1){
 //var room = Game.spawns.Spawn1.room;
 //if(room.survivalInfo.score === 0) {
   //console.log("STARTING NEW GAME. Resetting memory");
   //Game.memory=null;
-} else {
+//} else {
 
 //var source = Game.spawns.Spawn1.pos.findNearest(Game.SOURCES)
 	
@@ -41,10 +42,6 @@ if (Game.time<1){
 //makeCreep();
 
 
-for (var xxx in Game.rooms){    
-    objects=Game.rooms[xxx].lookAt(47,29);
-    console.log(objects);
-}
 //var room = Game.spawns.spawn1.room;
 
 //var spawns = Game.spawns;
