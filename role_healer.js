@@ -50,8 +50,12 @@ var role_healer = {
         //Game.HOSTILE_SPAWNS
         
         //Check if nearby hostile spawn is about to spawn something
-        var hostile_spawn = creep.pos.findClosest(Game.HOSTILE_SPAWNS);
-        console.log(hostile_spawn);
+        var hostile_spawn = creep.pos.findClosest(Game.HOSTILE_STRUCTURES, {
+			filter: function(object) {
+				return object.structureType == "keeperLair";
+			}
+		});
+        console.log(hostile_spawn.ticksToSpawn);
         
         
         ////////////HEALING

@@ -19,8 +19,12 @@ for (var ii in Game.rooms){
         room.memory.init='true';
         Game.memory=null;
     } 
-    var objects=Game.rooms[ii].lookAt(47,29);
-    console.log(objects);
+    //var objects=Game.rooms[ii].lookAt(47,29);
+    
+    
+    //console.log(objects);
+    //console.log(JSON.stringify(objects, null, 4));
+    
 }
 
 
