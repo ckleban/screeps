@@ -10,7 +10,15 @@ var role_ranger = {
  
  	attack_source: function(creep,job,spot) {
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
-        var target = creep.pos.findClosest(Game.HOSTILE_CREEPS);
+        
+        // don't actually kill the big bad guy, this will delay another one coming
+        var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
+            filter: function(object) {
+                return object.hits > 49;
+            }
+		});
+        
+        //var target = creep.pos.findClosest(Game.HOSTILE_CREEPS);
         
 	    //var source = creep.pos.findNearest(Game.HOSTILE_CREEPS)
 	    if(target) {
