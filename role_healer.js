@@ -47,13 +47,16 @@ var role_healer = {
         creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
         
         
+        
+        // Ranged heal weakest Crrep
+        
+        
         //Logic to find creep in range that has lowest health
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 3, {
 			filter: function(object) {
 				return object.hits < object.hitsMax;
 			}
 		});
-        
         if(targets.length > 0) {
             var best_target = targets[0];
             for (var l in targets) {
@@ -62,10 +65,21 @@ var role_healer = {
                    best_target = target;
                 }
             }
-            
             creep.rangedHeal(best_target);
         }   
-
+        
+        
+        // Close Heal closet creep
+        var closetarget = creep.pos.findClosest(Game.MY_CREEPS, {
+            filter: function(object) {
+                return object.hits < object.hitsMax;
+			}
+		});
+		
+        if(target !== null) {
+            creep.heal(target);
+            //creep.rangedHeal(target);
+		} 
         
         
         //Logic to find nearest creep that needs healing
