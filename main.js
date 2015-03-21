@@ -88,7 +88,7 @@ for (var i in Game.spawns) {
         }
     }   
  
-    if (spawn.energy>900 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
+    if (spawn.energy>300 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
         console.log("over 900!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[4].jobmemory.movers<5) {
             console.log("more movers!");
