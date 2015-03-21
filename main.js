@@ -91,6 +91,7 @@ for (var i in Game.spawns) {
     if (spawn.energy>900 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
         console.log("over 900!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[4].jobmemory.movers<5) {
+            console.log("more movers!");
             require('job_mine_normal').increase(spawn,spawn.memory.jobList[3],1,'mover');
         } 
     }   
@@ -99,10 +100,10 @@ for (var i in Game.spawns) {
     
     if (spawn.memory.jobList.length>3){
         if (spawn.memory.jobList[3].jobmemory.health=='healthy'){
-            console.log("attack!");
+            //console.log("attack!");
             spawn.memory.jobList[3].jobmemory.y=26;
         } else {
-            console.log("retreat!");
+            //console.log("retreat!");
             spawn.memory.jobList[3].jobmemory.y=24;       
         }
     }
