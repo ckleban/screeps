@@ -32,29 +32,10 @@
 		if(!spawn.memory.buildQueue) {
 			spawn.memory.buildQueue = new Array();
 			
-			/*
-			this.addToQueue(spawn, 'miner');
-			this.addToQueue(spawn, 'mover');
-			this.addToQueue(spawn, 'miner');
-			this.addToQueue(spawn, 'mover');
-			this.addToQueue(spawn, 'mover');
-			//this.addToQueue(spawn, 'defender');
-			//this.addToQueue(spawn, 'healer');
 			
-			*/
-            /*
-			this.addToQueue(spawn, 'miner');
-			this.addToQueue(spawn, 'miner');
-			this.addToQueue(spawn, 'carrier');
-			this.addToQueue(spawn, 'carrier');
-			this.addToQueue(spawn, 'guard', {squad: 1});
-			this.addToQueue(spawn, 'guard', {squad: 1});
-			this.addToQueue(spawn, 'builder');
-			this.addToQueue(spawn, 'guard', {squad: 1});
-			this.addToQueue(spawn, 'guard', {squad: 1});
-			this.addToQueue(spawn, 'builder');
-			this.addToQueue(spawn, 'medic', {squad: 1});
-			*/
+
+			this.addToQueue(spawn, 'mover');
+			
 		}
 		console.log (spawn.name+ " - QueueSize: "+spawn.memory.buildQueue.length +" - Energy: "+spawn.energy);
 		    
@@ -97,7 +78,7 @@
 		    
 		   	if (baby.role=='ranger'){
                 baby.creepMemory.role='ranger';
-                var result = spawn.createCreep([Game.TOUGH, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE], null, baby.creepMemory);
+                var result = spawn.createCreep([Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE], null, baby.creepMemory);
 		    }		    
 		    		    
         
