@@ -12,10 +12,25 @@ var role_miner = {
  
  
  
- 	mine_normal: function(creep,job,spot) {
+ 	mine_normal: function(creep,job,spot,spawn) {
  	    var source = Game.getObjectById(job.jobmemory.source);
-        creep.moveTo(source);
+        //creep.moveTo(source);
         creep.harvest(source);
+        
+        
+        var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3, {
+			filter: function(object) {
+				return object.hits > 50;
+			}
+		});
+        
+        if(targets.length > 0) {
+            creep.moveTo(spawn);
+        } else {
+            creep.moveTo(source);
+        }
+        
+        
         
     }
 };
