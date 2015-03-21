@@ -34,7 +34,7 @@
 			
 			
 
-			this.addToQueue(spawn, 'mover');
+			//this.addToQueue(spawn, 'mover');
 			
 		}
 		console.log (spawn.name+ " - QueueSize: "+spawn.memory.buildQueue.length +" - Energy: "+spawn.energy);
