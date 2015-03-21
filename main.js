@@ -41,6 +41,10 @@ if (Game.time<1){
 //makeCreep();
 
 
+for (var xxx in Game.rooms){    
+    objects=Game.rooms[xxx].lookAt(47,29);
+    console.log(objects);
+}
 //var room = Game.spawns.spawn1.room;
 
 //var spawns = Game.spawns;
@@ -50,7 +54,7 @@ for (var i in Game.spawns) {
     require('spawnManager').action(spawn);
     require('jobManager').action(spawn);
     
-    
+    console.log(
     
     // Job logic
     
