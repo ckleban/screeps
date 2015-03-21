@@ -173,7 +173,7 @@ for (var i in Game.spawns) {
     
 }
 
-}
+
 
 //manage harvesters
 
