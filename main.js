@@ -73,6 +73,9 @@ for (var i in Game.spawns) {
         var source = creepie.pos.findNearest(Game.SOURCES);
         require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:1,source:source.id});   
     }     
+    if (spawn.memory.jobList.length==5 && spawn.memory.jobList[4].jobmemory.health=='healthy' && spawn.energy>1102 && spawn.memory.buildQueue.length < 2){
+         require('jobManager').addToList(spawn,'wallofranged2', 'wallofranged', {rangers:2,healers:2,x:37,y:11,direction_x:1,healers_y:1});
+   }     
 
     
     
