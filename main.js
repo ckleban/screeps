@@ -92,7 +92,7 @@ for (var i in Game.spawns) {
         console.log("over 900!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[4].jobmemory.movers<5) {
             console.log("more movers!");
-            require('job_mine_normal').increase(spawn,spawn.memory.jobList[3],1,'mover');
+            require('job_mine_normal').increase(spawn,spawn.memory.jobList[4],1,'mover');
         } 
     }   
     
