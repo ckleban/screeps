@@ -90,14 +90,15 @@ for (var i in Game.spawns) {
     
     // move source attack in/out of position based on various factors
     
-    if (spawn.memory.jobList.length>3 && spawn.memory.jobList[3].jobmemory.health=='healthy'){
-        console.log("attack!");
-        spawn.memory.jobList[3].jobmemory.y=26;
-    } else {
-        console.log("retreat!");
-        spawn.memory.jobList[3].jobmemory.y=24;       
+    if (spawn.memory.jobList.length>3){
+        if (spawn.memory.jobList[3].jobmemory.health=='healthy'){
+            console.log("attack!");
+            spawn.memory.jobList[3].jobmemory.y=26;
+        } else {
+            console.log("retreat!");
+            spawn.memory.jobList[3].jobmemory.y=24;       
+        }
     }
-    
     
     
     // If spare energy is high, increase wall size by 1
