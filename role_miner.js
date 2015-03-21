@@ -20,7 +20,7 @@ var role_miner = {
         
         var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 7, {
 			filter: function(object) {
-				return object.hits > 50;
+				//return object.hits > 50;
                 return object.hitsMax > 3000;
 			}
 		});
