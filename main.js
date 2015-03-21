@@ -105,6 +105,7 @@ for (var i in Game.spawns) {
         if (spawn.memory.jobList[3].jobmemory.health=='healthy'){
             //console.log("attack!");
             spawn.memory.jobList[3].jobmemory.y=26;
+            
         } else {
             //console.log("retreat!");
             spawn.memory.jobList[3].jobmemory.y=24;       

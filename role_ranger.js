@@ -37,12 +37,11 @@ var role_ranger = {
             }
 		});
         
-	    
         var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
-        if(targets.length == 1) {
-            creep.rangedAttack(target);
-        } else if (targets.length > 1) {
+        if(targets.length>2) {
             creep.rangedMassAttack();
+        } else if (targets.length>0) {
+            creep.rangedAttack(target);
         }
         
         

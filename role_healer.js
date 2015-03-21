@@ -26,13 +26,34 @@ var role_healer = {
  
     attack_source: function(creep,job,spot) {
         
-        creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
+        
+        var source = Game.getObjectById(job.jobmemory.source);
+        var ranger = Game.getObjectById(job.jobmemory.ranger[0]);
+        var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
+		    
+        // if ranger is alive and nearer the enemy
+        //if (ranger && ranger.pos.y>creep.pos.y && creep.energy < creep.energyCapacity && job.jobmemory.danger=="false") {
+            
+            
+            
+
+            
         var target = creep.pos.findClosest(Game.MY_CREEPS, {
             filter: function(object) {
                 return object.hits < object.hitsMax;
 			}
 		});
 		
+        if (job.jobmemory.health="healthy"){
+            if(target !== null) {
+                creep.moveTo(target);
+            } else {
+                creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
+            }
+        } else {           
+            creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
+        }
+            
         if(target !== null) {
             creep.heal(target);
             creep.rangedHeal(target);
