@@ -55,6 +55,13 @@ var role_mover = {
         // if miner is in danger, move to safe area
         } else if (creep.energy < creep.energyCapacity && job.jobmemory.danger=="true") {
             creep.moveTo(source.pos.x+5,source.pos.y-8);
+        
+            
+        // if miner is dead
+        } else if (!miner) {
+            creep.moveTo(source.pos.x+5,source.pos.y-8);
+        
+            
             
         // if mover is full, bring back energy
    	    } else {
