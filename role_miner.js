@@ -25,7 +25,7 @@ var role_miner = {
 		});
         
         if(targets.length > 0) {
-            creep.moveTo(source.pos.x,source.pos.y+8);
+            creep.moveTo(source.pos.x,source.pos.y-8);
             job.jobmemory.danger="true";
         
         } else {

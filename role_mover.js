@@ -55,7 +55,7 @@ var role_mover = {
     
         } else if (creep.energy < creep.energyCapacity && job.jobmemory.danger=="true") {
             var source = Game.getObjectById(job.jobmemory.source);
-            creep.moveTo(source.pos.x+5,source.pos.y+8);
+            creep.moveTo(source.pos.x+5,source.pos.y-8);
             
 		    
    	    } else {
