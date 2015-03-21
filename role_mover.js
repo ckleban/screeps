@@ -58,7 +58,7 @@ var role_mover = {
         
             
         // if miner is dead
-        } else if (!miner) {
+        } else if (!miner && creep.energy < creep.energyCapacity) {
             //creep.moveTo(source.pos.x+5,source.pos.y-8);
             creep.moveTo(target);
             creep.pickup(target);
