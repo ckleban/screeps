@@ -4,38 +4,19 @@ var role_mover = {
     base: function(creep) {
     
     
-  if (creep.memory.job_active!='true'){ 
+        if (creep.memory.job_active!='true'){ 
    	
-    if(creep.energy < 1) {
-	    //creep.memory.target="0";
-        /*
-		var sources = creep.room.find(Game.SOURCES);
-		var source = creep.pos.findNearest(Game.SOURCES);
-	    var target = creep.memory.target;
-	    if (target!=null){
-	        creep.moveTo(target);
-	        creep.memory.target=source;
-	    } else {
-	        //creep.moveTo(source);
-	    }
-	    */
-	    //var source = Game.getObjectById(creep.memory.orig_target);
-	    //var target = creep.memory.orig_target;
-	    //var target = Game.getObjectByName(creep.memory.orig_target);
-	    var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
-		//console.log(target);
-		//creep.moveTo(sources[0]);
-		creep.moveTo(target);
-		creep.pickup(target);
+            if(creep.energy < 1) {
+                var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
+                creep.moveTo(target);
+                creep.pickup(target);
 		
-    
-    	
-	}
-	else {
-		creep.moveTo(Game.spawns.Spawn1);
-		creep.transferEnergy(Game.spawns.Spawn1);
-	}
-  }
+            }
+            else {
+                creep.moveTo(Game.spawns.Spawn1);
+                creep.transferEnergy(Game.spawns.Spawn1);
+            }
+        }
 	
 		
     },
@@ -47,9 +28,10 @@ var role_mover = {
         
         
         if (creep.energy < creep.energyCapacity && job.jobmemory.danger=="false") {
+            var source = Game.getObjectById(job.jobmemory.source);
             var miner = Game.getObjectById(job.jobmemory.miner[0]);
 	        var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
-		    creep.moveTo(miner);
+		    creep.moveTo(source);
 		    creep.pickup(target);
 		
     
