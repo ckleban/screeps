@@ -70,9 +70,7 @@ for (var i in Game.spawns) {
     }     
     if (spawn.memory.jobList.length==4 && spawn.memory.jobList[3].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
         var creepie = Game.getObjectById(spawn.memory.jobList[3].jobmemory.ranger[0]);
-        
         var source = creepie.pos.findNearest(Game.SOURCES);
-        //var source = spawn.pos.findNearest(Game.SOURCES);
         require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:1,source:source.id});   
     }     
 
@@ -88,6 +86,13 @@ for (var i in Game.spawns) {
         if (spawn.memory.jobList[3].jobmemory.rangers<1) {
             require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'ranger');
         }
+    }   
+ 
+    if (spawn.energy>900 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
+        console.log("over 900!!!!!!!!!!!!!!!!!");
+        if (spawn.memory.jobList[4].jobmemory.movers<5) {
+            require('job_mine_normal').increase(spawn,spawn.memory.jobList[3],1,'mover');
+        } 
     }   
     
     // move source attack in/out of position based on various factors

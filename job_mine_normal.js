@@ -6,10 +6,10 @@
 
 
 //untested
-     increase: function(spawn,job,increase) {
-         job.jobmemory.rangers=job.jobmemory.rangers+increase;
-     },
 
+     increase: function(spawn,job,increase,role) {
+        job.jobmemory[role+'s']=job.jobmemory[role+'s']+increase;
+     },
 
      //untested
      decrease: function(spawn,job,decrease) {
