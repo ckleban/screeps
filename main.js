@@ -51,7 +51,7 @@ for (var i in Game.spawns) {
     require('spawnManager').action(spawn);
     require('jobManager').action(spawn);
     
-    console.log(
+    
     
     // Job logic
     
