@@ -18,14 +18,14 @@ var role_miner = {
         creep.harvest(source);
         
         
-        var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 9, {
+        var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 7, {
 			filter: function(object) {
 				return object.hits > 50;
 			}
 		});
         
         if(targets.length > 0) {
-            creep.moveTo(spawn);
+            creep.moveTo(source.pos.x,source.pos.y+8);
             job.jobmemory.danger="true";
         
         } else {
