@@ -12,13 +12,15 @@
          
          var spawnspot = Game.getObjectById(spawn.id);
          var source = Game.getObjectById(job.jobmemory.source);
-         var path = spawn.room.findPath(spawnspot.pos, source.pos, {ignoreCreeps: true});
+         var miner = Game.getObjectById(job.jobmemory.miner[0]);
+         
+         var path = spawn.room.findPath(spawnspot.pos, miner.pos, {ignoreCreeps: true});
          //var path = spawn.room.findPath(spawnspot.pos, source.pos);
          //var path = spawn.room.findPath(spawnspot, source);
          //console.log(JSON.stringify(path, null, 4));
          
              
-         job.jobmemory.mover_chains=path.length-2;
+         job.jobmemory.mover_chains=path.length-1;
          job.jobmemory.locations_x = new Array();
          job.jobmemory.locations_y = new Array();
          
