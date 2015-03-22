@@ -12,7 +12,8 @@ var role_builder = {
             if(creep.energy < 1) {
                 var spawn = creep.pos.findNearest(Game.MY_SPAWNS);
                 creep.moveTo(spawn);
-                creep.pickup(spawn);
+                //creep.pickup(spawn);
+                spawn.transferEnergy(creep);
             } else {
                 creep.moveTo(target);
                 creep.build(target);
@@ -28,7 +29,7 @@ var role_builder = {
                 if(creep.energy < 1) {
                     var spawn = creep.pos.findNearest(Game.MY_SPAWNS);
                     creep.moveTo(spawn);
-                    creep.pickup(spawn);
+                    spawn.transferEnergy(creep);
                 } else {
                     creep.moveTo(fixtarget);
                     creep.repair(fixtarget);
