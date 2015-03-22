@@ -121,7 +121,10 @@ var jobManager = {
             if (job.role=='attack_source'){
                 require('job_attack_source').action(spawn,job);
             }
-            
+            if (job.role=='mine_chain'){
+                require('job_mine_chain').action(spawn,job);
+            }
+                       
         }
     }
     };

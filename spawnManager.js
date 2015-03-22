@@ -61,6 +61,32 @@
 		    	//spawn.memory.buildQueue = _.drop(spawn.memory.buildQueue);
 			    
 		    }
+            
+            
+            
+            if (baby.role=='miner-chain'){
+                var source = spawn.pos.findNearest(Game.SOURCES);
+                var result = spawn.createCreep([Game.WORK, Game.WORK, Game.WORK, Game.CARRY,Game.MOVE], null, {role:"miner-chain",orig_target:source.id});
+   
+		        //console.log('Start spawning ' + baby.role+": "+result);
+		    	//spawn.memory.buildQueue = _.drop(spawn.memory.buildQueue);
+			    
+		    }
+		   	if (baby.role=='mover-chain'){
+                
+                var target = "";
+                var result = spawn.createCreep([Game.CARRY, Game.MOVE], null, {role:"mover",orig_target:target});
+                
+		        //console.log('Start spawning ' + baby.role+": "+result);
+		    	//spawn.memory.buildQueue = _.drop(spawn.memory.buildQueue);
+			 
+            
+		    }
+            
+            
+            
+            
+            
 		   	if (baby.role=='defender'){
                 
                 var result = spawn.createCreep([Game.TOUGH, Game.TOUGH, Game.RANGED_ATTACK, Game.RANGED_ATTACK, Game.MOVE], null, {role:"defender"});
