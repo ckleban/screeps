@@ -36,7 +36,7 @@ var role_healer = {
 			}
 		});
 		
-        creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y+1);
+        creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
         // Logic to try to move between rangers and source
         // needs better logic
         /*
