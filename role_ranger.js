@@ -30,7 +30,7 @@ var role_ranger = {
  
  	wallofranged: function(creep,job,spot) {
         
-        if (creep.ticksToLive<100) {
+        if (creep.ticksToLive<0) {
             creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y+1);    
         } else {
             
