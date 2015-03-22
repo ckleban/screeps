@@ -29,8 +29,13 @@ var role_ranger = {
     }, 
  
  	wallofranged: function(creep,job,spot) {
-        creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
         
+        if (creep.ticksToLive<100) {
+            creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y+1);    
+        } else {
+            
+            creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y);
+        }
         
         var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
             filter: function(object) {
