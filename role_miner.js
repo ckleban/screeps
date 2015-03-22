@@ -63,7 +63,7 @@ var role_miner = {
         
         
         
-    }
+    },
     
     
     

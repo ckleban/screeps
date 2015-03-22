@@ -70,7 +70,7 @@ var role_mover_chain = {
             creep.moveTo(spawn);
             creep.transferEnergy(spawn);
 	    }
-    }
+    },
     
     
     
