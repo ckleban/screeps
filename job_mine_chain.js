@@ -57,7 +57,7 @@
          
          
             
-        var  roles=['miner-chain','mover-chain'];
+        var  roles=['miner','mover_chain'];
         for (var i in roles){
             var role = roles[i];
        
