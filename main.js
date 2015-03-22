@@ -212,6 +212,7 @@ for(var name in Game.creeps) {
 		require('role_miner').base(creep);
     
 	}	
+    
 	if(creep.memory.role == 'ranger') {
 		require('role_ranger').base(creep);
     

@@ -47,7 +47,8 @@ var jobManager = {
             if(1==2){ // Find avaiable creep
                 // fill me in
             } else {  // If non avail, build needed creep
-                var creep = require('spawnManager').addToQueue(spawn,role, {job:job.name,job_role:job.role});
+                //var creep = require('spawnManager').addToQueue(spawn,role, {job:job.name,job_role:job.role});
+                var creep = require('spawnManager').addToQueue(spawn,role, {job:job.name});
                 job.jobmemory[role][spot] = 'spawning';
                 job.jobmemory.health = 'spawning';
             } //end if
