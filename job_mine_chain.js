@@ -6,7 +6,7 @@
 
      
      init: function(spawn,job) {
-         var path = creep.room.findPath(spawn, job.jobmemory.source, {ignoreCreeps: true});
+         var path = spawn.room.findPath(spawn, job.jobmemory.source, {ignoreCreeps: true});
          for (var yy in path) {
              var location=path[yy];
              job.jobmemory.locations[yy] = location;
