@@ -7,6 +7,7 @@
      
      init: function(spawn,job) {
          var path = spawn.room.findPath(spawn, job.jobmemory.source, {ignoreCreeps: true});
+         job.jobmemory.locations = new Array();
          for (var yy in path) {
              var location=path[yy];
              job.jobmemory.locations[yy] = location;
