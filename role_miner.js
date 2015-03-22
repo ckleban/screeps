@@ -27,7 +27,8 @@ var role_miner = {
         
         
         if(targets.length > 0) {
-            if (targets[0].hits>99){
+            //if (targets[0].hits>99){
+            if (targets[0].hits>0){
                 creep.moveTo(source.pos.x,source.pos.y-8);
                 job.jobmemory.danger="true";
             } else {
