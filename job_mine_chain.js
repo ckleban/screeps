@@ -14,6 +14,7 @@
          var source = Game.getObjectById(job.jobmemory.source);
          //var path = spawn.room.findPath(spawn, source, {ignoreCreeps: true});
          var path = spawn.room.findPath(spawnspot.pos, source.pos);
+         //var path = spawn.room.findPath(spawnspot, source);
          console.log(JSON.stringify(path, null, 4));
          
             
