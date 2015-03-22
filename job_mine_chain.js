@@ -25,8 +25,8 @@
          for (var yy in path) {
              var location=path[yy];
              console.log(path[yy].x+" "+path[yy].y);
-         //    job.jobmemory.location_x[yy] = location.x;
-            // job.jobmemory.location_y[yy] = location.y;
+             job.jobmemory.location_x[yy] = location.x;
+             job.jobmemory.location_y[yy] = location.y;
          }
      }, 
      
