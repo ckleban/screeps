@@ -41,17 +41,19 @@ var role_miner = {
                     return object.structureType == "keeperLair";
                 }
             });
-            // If spawn of bad guy is about to happen
-            if (hostile_spawn.ticksToSpawn < 80 && hostile_spawn.ticksToSpawn > 0) {
-                creep.moveTo(source.pos.x,source.pos.y-8);
-                job.jobmemory.danger="true";
             
-            // If no enemies in range and no spawn about to happen, go mine!
-            } else {
-                job.jobmemory.danger="false";
-                creep.moveTo(source);
+            if (hostile_spawn){
+                // If spawn of bad guy is about to happen
+                if (hostile_spawn.ticksToSpawn < 80 && hostile_spawn.ticksToSpawn > 0) {
+                    creep.moveTo(source.pos.x,source.pos.y-8);
+                    job.jobmemory.danger="true";
+              
+                    // If no enemies in range and no spawn about to happen, go mine!
+                } else {
+                    job.jobmemory.danger="false";
+                    creep.moveTo(source);
+                }
             }
-        
             
             
             
