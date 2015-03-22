@@ -45,8 +45,8 @@ var role_mover = {
                     creep.moveTo(target);   
                 }
             } else {
-                creep.moveTo(source.pos.x+5,source.pos.y-8);
-               
+                //creep.moveTo(source.pos.x+5,source.pos.y-8);
+                creep.moveTo(target); 
             }
             
 
