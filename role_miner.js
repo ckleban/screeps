@@ -76,7 +76,7 @@ var role_miner = {
             var range = creep.pos.getRangeTo(source);
             if(range <= 1) {
                 require('job_mine_chain').init(spawn,spawn.memory.jobList[0]); 
-            
+                job.jobmemory.miner_ready='true';
             }
             
             

@@ -78,8 +78,10 @@ var role_mover_chain = {
     mine_chain: function(creep,job,spot,spawn) {
 
         // move to spot
-        creep.moveTo(job.jobmemory.locations_x[spot],job.jobmemory.locations_y[spot]);
-        
+        if (job.jobmemory.miner_ready='true'){
+         
+            creep.moveTo(job.jobmemory.locations_x[spot],job.jobmemory.locations_y[spot]);
+        }
         
         // Pickup energy
         var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
