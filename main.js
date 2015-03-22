@@ -85,7 +85,7 @@ for (var i in Game.spawns) {
     } 
 */    
     // IF the first miner_chain job was inited, and thus created movers
-    if (job.jobmemory.locations_x && job.jobmemory.locations_y){
+    if (spawn.memory.jobList[0].jobmemory.locations_x && spawn.memory.jobList[0].jobmemory.locations_y){
         if (spawn.memory.jobList.length==1 && spawn.memory.jobList[0].jobmemory.health=='healthy' && spawn.energy>802 && spawn.memory.buildQueue.length < 2){
             require('jobManager').addToList(spawn,'wallofranged1', 'wallofranged', {rangers:1,healers:1,x:35,y:13,direction_x:1,healers_y:1});
         }     
