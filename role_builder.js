@@ -18,7 +18,24 @@ var role_builder = {
                 creep.build(target);
             }
         } else {
-            creep.moveTo(42,5);
+            //creep.moveTo(42,5);
+            var fixtarget = creep.pos.findClosest(Game.MY_STRUCTURES, {
+                filter: function(object) {
+                    return object.hits < object.hitsMax;
+                }
+            });
+            if(fixtarget) {
+                if(creep.energy < 1) {
+                    var spawn = creep.pos.findNearest(Game.MY_SPAWNS);
+                    creep.moveTo(spawn);
+                    creep.pickup(spawn);
+                } else {
+                    creep.moveTo(fixtarget);
+                    creep.repair(fixtarget);
+                }
+                //creep.moveTo(target);
+                //creep.repair(target);
+            }
         }
         
         
