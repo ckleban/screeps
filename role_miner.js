@@ -25,6 +25,7 @@ var role_miner = {
 			}
 		});
         
+        
         if(targets.length > 0) {
             if (targets[0].hits>99){
                 creep.moveTo(source.pos.x,source.pos.y-8);
@@ -34,8 +35,27 @@ var role_miner = {
                 creep.moveTo(source);
             }
         } else {
-            job.jobmemory.danger="false";
-            creep.moveTo(source);
+            //Check if nearby hostile spawn is about to spawn something
+            var hostile_spawn = creep.pos.findClosest(Game.HOSTILE_STRUCTURES, {
+                filter: function(object) {
+                    return object.structureType == "keeperLair";
+                }
+            });
+            // If spawn of bad guy is about to happen
+            if (hostile_spawn.ticksToSpawn < 80 && hostile_spawn.ticksToSpawn > 0) {
+                creep.moveTo(source.pos.x,source.pos.y-8);
+                job.jobmemory.danger="true";
+            
+            // If no enemies in range and no spawn about to happen, go mine!
+            } else {
+                job.jobmemory.danger="false";
+                creep.moveTo(source);
+            }
+        
+            
+            
+            
+           
         }
         
         

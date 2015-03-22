@@ -36,6 +36,10 @@ var role_healer = {
 			}
 		});
 		
+        creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y+1);
+        // Logic to try to move between rangers and source
+        // needs better logic
+        /*
         if (job.jobmemory.health="healthy"){
             if(target) {
                 creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y+1);
@@ -45,17 +49,11 @@ var role_healer = {
         } else {           
             creep.moveTo(job.jobmemory.x+spot,job.jobmemory.y-1);
         }
-         
+        */
         
-        //Game.HOSTILE_SPAWNS
+        // Check if keeper Lair is about to spawn a bad guy!
         
-        //Check if nearby hostile spawn is about to spawn something
-        var hostile_spawn = creep.pos.findClosest(Game.HOSTILE_STRUCTURES, {
-			filter: function(object) {
-				return object.structureType == "keeperLair";
-			}
-		});
-        console.log(hostile_spawn.ticksToSpawn);
+
         
         
         ////////////HEALING
