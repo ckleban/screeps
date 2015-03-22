@@ -7,13 +7,16 @@
      
      init: function(spawn,job) {
          var source = Game.getObjectById(job.jobmemory.source);
-         var path = spawn.room.findPath(spawn, source, {ignoreCreeps: true});
-         job.jobmemory.locations = new Array();
+         //var path = spawn.room.findPath(spawn, source, {ignoreCreeps: true});
+         var path = spawn.room.findPath(spawn, source);
          console.log(JSON.stringify(path, null, 4));
+         job.jobmemory.locations-x = new Array();
+         job.jobmemory.locations-y = new Array();
          for (var yy in path) {
+             console.log(path[yy].x+" "+path[yy].y);
              var location=path[yy];
-             job.jobmemory.locations[yy] = location;
-             
+             job.jobmemory.location-x[yy] = location.x;
+             job.jobmemory.location-y[yy] = location.y;
          }
      }, 
      
