@@ -113,7 +113,7 @@ for (var i in Game.spawns) {
     
     
     
-    if (spawn.energy>800 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
+    if (spawn.energy>1300 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
         console.log("over 800!!!!!!!!!!!!!!!!!");
         if (spawn.memory.jobList[2].jobmemory.healers<2) {
             require('job_attack_source').increase(spawn,spawn.memory.jobList[3],1,'healer');
