@@ -46,7 +46,7 @@
 		
 		    if (baby.role=='miner'){
                 var source = spawn.pos.findNearest(Game.SOURCES);
-                var result = spawn.createCreep([Game.WORK, Game.WORK, Game.WORK, Game.CARRY, Game.MOVE], null, {role:"miner",orig_target:source.id});
+                var result = spawn.createCreep([Game.WORK, Game.WORK, Game.WORK, Game.WORK, Game.MOVE], null, {role:"miner",orig_target:source.id});
    
 		        //console.log('Start spawning ' + baby.role+": "+result);
 		    	//spawn.memory.buildQueue = _.drop(spawn.memory.buildQueue);
