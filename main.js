@@ -114,6 +114,17 @@ for (var i in Game.spawns) {
     }     
     
     
+    
+    
+    /// Build Rampart
+    if (spawn.memory.jobList.length==5 && spawn.memory.jobList[4].jobmemory.health=='healthy' && spawn.energy>3102 && spawn.memory.buildQueue.length < 2){
+        spawn.room.createConstructionSite(39, 10, Game.STRUCTURE_RAMPART);
+        require('spawnManager').addToQueue(spawn,"builder");
+    
+        //require('jobManager').addToList(spawn,'wallofranged2', 'wallofranged', {rangers:0,healers:3,x:39,y:9,direction_x:1,healers_y:1});
+    }     
+    
+    
     /*if (spawn.memory.jobList.length==5 && spawn.memory.jobList[4].jobmemory.health=='healthy' && spawn.energy>1102 && spawn.memory.buildQueue.length < 2){
          require('jobManager').addToList(spawn,'wallofranged2', 'wallofranged', {rangers:2,healers:2,x:37,y:11,direction_x:1,healers_y:1});
    } */    
@@ -244,5 +255,7 @@ for(var name in Game.creeps) {
 	if(creep.memory.role == 'healer') {
 		require('role_healer').base(creep);
 	}
-		
+	if(creep.memory.role == 'builder') {
+		require('role_builder').base(creep);
+	}		
 }

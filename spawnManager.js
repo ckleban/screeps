@@ -72,7 +72,15 @@
 		    }            
             
             
-            
+		   	if (baby.role=='builder'){
+                
+                var target = "";
+                var result = spawn.createCreep([Game.CARRY, Game.WORK, Game.MOVE, Game.MOVE], null, {role:"builder",orig_target:target});
+                
+		        //console.log('Start spawning ' + baby.role+": "+result);
+		    	//spawn.memory.buildQueue = _.drop(spawn.memory.buildQueue);
+			    
+		    }            
             
             
             
