@@ -45,7 +45,7 @@ var role_miner = {
             
             if (hostile_spawn){
                 // If spawn of bad guy is about to happen
-                if (hostile_spawn.ticksToSpawn < 80 && hostile_spawn.ticksToSpawn > 0) {
+                if (hostile_spawn.ticksToSpawn < 50 && hostile_spawn.ticksToSpawn > 0) {
                     creep.moveTo(source.pos.x,source.pos.y-8);
                     job.jobmemory.danger="true";
               
