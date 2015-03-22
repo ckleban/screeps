@@ -79,7 +79,7 @@ var role_mover_chain = {
 
         // move to spot
         //if (job.jobmemory.miner_ready='true'){
-            if (job.jobmemory.locations_x[spot] && job.jobmemory.locations_y[spot]){
+            if (job.jobmemory.locations_x && job.jobmemory.locations_y){
                 creep.moveTo(job.jobmemory.locations_x[spot],job.jobmemory.locations_y[spot]);
             }
         //}
