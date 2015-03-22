@@ -70,8 +70,20 @@ var role_miner = {
     
     
      	mine_chain: function(creep,job,spot,spawn) {
- 	    var source = Game.getObjectById(job.jobmemory.source);
-        //creep.moveTo(source);
+            var source = Game.getObjectById(job.jobmemory.source);
+            
+            // IF source is near, init the chain
+            var range = creep.pos.getRangeTo(source);
+            if(range <= 1) {
+                require('job_mine_chain').init(spawn,spawn.memory.jobList[0]); 
+            
+            }
+            
+            
+            
+            
+            
+ 	    //creep.moveTo(source);
         creep.harvest(source);
         
         
