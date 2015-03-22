@@ -15,17 +15,17 @@
          //var path = spawn.room.findPath(spawn, source, {ignoreCreeps: true});
          var path = spawn.room.findPath(spawnspot.pos, source.pos);
          //var path = spawn.room.findPath(spawnspot, source);
-         console.log(JSON.stringify(path, null, 4));
+         //console.log(JSON.stringify(path, null, 4));
          
-            
-         
+             
+         job.jobmemory.mover_chains=path.length-2;
          job.jobmemory.locations_x = new Array();
          job.jobmemory.locations_y = new Array();
          
          
          for (var yy in path) {
              var location=path[yy];
-             console.log(path[yy].x+" "+path[yy].y);
+             //console.log(path[yy].x+" "+path[yy].y);
              job.jobmemory.locations_x[yy] = location.x;
              job.jobmemory.locations_y[yy] = location.y;
          }
