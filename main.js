@@ -71,7 +71,7 @@ for (var i in Game.spawns) {
     
     if (spawn.memory.jobList.length==0){
         var source = spawn.pos.findNearest(Game.SOURCES);    
-        require('jobManager').addToList(spawn,'mine_chain1', 'mine_chain', {miners:1,mover_chains:0,source:source.id});
+        require('jobManager').addToList(spawn,'mine_chain1', 'mine_chain', {miners:1,mover_chains:1,source:source.id});
     } 
     //if (spawn.memory.jobList[0]){
     //    require('job_mine_chain').init(spawn,spawn.memory.jobList[0]);    
