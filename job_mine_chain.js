@@ -20,11 +20,13 @@
          
          job.jobmemory.locations_x = new Array();
          job.jobmemory.locations_y = new Array();
+         
+         
          for (var yy in path) {
-             console.log(path[yy].x+" "+path[yy].y);
              var location=path[yy];
-             job.jobmemory.location_x[yy] = location.x;
-             job.jobmemory.location_y[yy] = location.y;
+             console.log(path[yy].x+" "+path[yy].y);
+         //    job.jobmemory.location_x[yy] = location.x;
+            // job.jobmemory.location_y[yy] = location.y;
          }
      }, 
      
