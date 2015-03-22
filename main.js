@@ -76,7 +76,7 @@ for (var i in Game.spawns) {
     if (spawn.memory.jobList.length==4 && spawn.memory.jobList[3].jobmemory.health=='healthy' && spawn.energy>1102 && spawn.memory.buildQueue.length < 2){
         var creepie = Game.getObjectById(spawn.memory.jobList[3].jobmemory.ranger[0]);
         var source = creepie.pos.findNearest(Game.SOURCES);
-        require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:1,source:source.id});   
+        require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:2,source:source.id});   
     }     
     /*if (spawn.memory.jobList.length==5 && spawn.memory.jobList[4].jobmemory.health=='healthy' && spawn.energy>1102 && spawn.memory.buildQueue.length < 2){
          require('jobManager').addToList(spawn,'wallofranged2', 'wallofranged', {rangers:2,healers:2,x:37,y:11,direction_x:1,healers_y:1});
@@ -96,9 +96,9 @@ for (var i in Game.spawns) {
         }
     }   
  
-    if (spawn.energy>300 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
+    if (spawn.energy>1100 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>4) {
         console.log("over 900!!!!!!!!!!!!!!!!!");
-        if (spawn.memory.jobList[4].jobmemory.movers<6) {
+        if (spawn.memory.jobList[4].jobmemory.movers<5) {
             console.log("more movers!");
             require('job_mine_normal').increase(spawn,spawn.memory.jobList[4],1,'mover');
         } 
