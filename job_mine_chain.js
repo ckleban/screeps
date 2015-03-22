@@ -7,12 +7,13 @@
      
      init: function(spawn,job) {
          
-         console.log(JSON.stringify(spawn, null, 4));
-         console.log(JSON.stringify(job, null, 4));
+         //console.log(JSON.stringify(spawn, null, 4));
+         //console.log(JSON.stringify(job, null, 4));
          
+         var spawnspot = Game.getObjectById(spawn.id);
          var source = Game.getObjectById(job.jobmemory.source);
          //var path = spawn.room.findPath(spawn, source, {ignoreCreeps: true});
-         var path = spawn.room.findPath(spawn, source);
+         var path = spawn.room.findPath(spawnspot, source);
          console.log(JSON.stringify(path, null, 4));
          
             
