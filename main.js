@@ -97,10 +97,14 @@ for (var i in Game.spawns) {
     }     
     
     
+    
+    
     if (spawn.memory.jobList.length==3 && spawn.memory.jobList[2].jobmemory.health=='healthy' && spawn.energy>1102 && spawn.memory.buildQueue.length < 2){
         var creepie = Game.getObjectById(spawn.memory.jobList[2].jobmemory.ranger[0]);
         if (creepie){
-            var source = creepie.pos.findNearest(Game.SOURCES);
+            var pos = creepie.room.getPositionAt(45,28);
+            var source = pos.findClosest(Game.SOURCES_ACTIVE);
+            //var source = creepie.pos.findNearest(Game.SOURCES);
             require('jobManager').addToList(spawn,'mine_normal3', 'mine_normal', {miners:1,movers:2,source:source.id});  
         }
     }     
