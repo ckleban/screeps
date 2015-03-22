@@ -14,7 +14,8 @@ var role_ranger = {
         // don't actually kill the big bad guy, this will delay another one coming
         var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
             filter: function(object) {
-                return object.hits > 99;
+                //return object.hits > 99;
+                return object.hits > 0;
             }
 		});
         
