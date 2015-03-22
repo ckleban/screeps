@@ -12,7 +12,25 @@
          
          var spawnspot = Game.getObjectById(spawn.id);
          var source = Game.getObjectById(job.jobmemory.source);
+         
+         
+         
          var miner = Game.getObjectById(job.jobmemory.miner[0]);
+         
+         // find farest miner, and set path to him
+         for (var m in job.jobmemory.miner){
+             
+             var mineroption = Game.getObjectById(job.jobmemory.miner[m]);
+            
+             // IF source is near, init the chain
+             var range_option = spawn.pos.getRangeTo(mineroption);
+             var range_miner = spawn.pos.getRangeTo(miner);
+             if (range_option>range_miner) {
+                 miner=mineroption;
+             }
+         }
+             
+             
          
          var path = spawn.room.findPath(spawnspot.pos, miner.pos, {ignoreCreeps: true});
          //var path = spawn.room.findPath(spawnspot.pos, source.pos);
