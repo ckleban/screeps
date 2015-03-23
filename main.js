@@ -184,12 +184,16 @@ for (var i in Game.spawns) {
     
     
     
-    // Attack close source. 
-    if (spawn.energy>3000 && Game.time > 200 && spawn.memory.buildQueue.length < 2) {
-        console.log("over 3000!!!!!!!!!!!!!!!!!");
-        //require('jobManager').addToList(spawn, 'attack_source1', 'attack_source', {rangers:0,healers:1,x:44,y:26,direction_x:1,healers_y:1});
+    if (spawn.energy>3202 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
+        console.log("over 1000!!!!!!!!!!!!!!!!!");
+        if (spawn.memory.jobList[1].jobmemory.healers<9) {
+            require('job_wallofranged').increase(spawn,spawn.memory.jobList[1],1,'healer');
+        } 
+        if (spawn.memory.jobList[1].jobmemory.rangers<9) {
+            require('job_wallofranged').increase(spawn,spawn.memory.jobList[1],1,'ranger');
+        }
     }
-    
+
     
     
     
