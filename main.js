@@ -183,9 +183,11 @@ for (var i in Game.spawns) {
 
     
     
+    // If we have a ton more energy, add creeps to wall of range
     
     if (spawn.energy>3202 && spawn.memory.buildQueue.length < 2 && spawn.memory.jobList.length>2) {
-        console.log("over 1000!!!!!!!!!!!!!!!!!");
+        console.log("over 3200!!!!!!!!!!!!!!!!!");
+        spawn.memory.jobList[1].jobmemory.x=spawn.memory.jobList[1].jobmemory.x-2;
         if (spawn.memory.jobList[1].jobmemory.healers<9) {
             require('job_wallofranged').increase(spawn,spawn.memory.jobList[1],1,'healer');
         } 
