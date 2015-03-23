@@ -93,7 +93,7 @@ for (var i in Game.spawns) {
     
     
     if (spawn.memory.jobList.length==2 && spawn.memory.jobList[1].jobmemory.health=='healthy' && spawn.energy>702 && spawn.memory.buildQueue.length < 2){
-        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:0,healers:2,x:44,y:22,direction_x:1,healers_y:1});
+        require('jobManager').addToList(spawn,'attack_source1', 'attack_source', {rangers:1,healers:0,x:44,y:22,direction_x:1,healers_y:1});
     }     
     
     
