@@ -192,7 +192,7 @@ for (var i in Game.spawns) {
         if (spawn.memory.jobList[1].jobmemory.healers<9) {
             require('job_wallofranged').increase(spawn,spawn.memory.jobList[1],1,'healer');
         } 
-        if (spawn.memory.jobList[1].jobmemory.rangers<9) {
+        if (spawn.memory.jobList[1].jobmemory.rangers<12) {
             require('job_wallofranged').increase(spawn,spawn.memory.jobList[1],1,'ranger');
         }
     }
