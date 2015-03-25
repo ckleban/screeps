@@ -66,7 +66,14 @@ var role_arena = {
                 }
                                            
             });
-            creep.moveTo(guy);   
+            if (guy){
+                
+                creep.moveTo(guy);  
+            } else {
+                var guy2 = creep.pos.findNearest(Game.MY_CREEPS);
+                creep.moveTo(guy2);
+            }
+            
         }
         
         
