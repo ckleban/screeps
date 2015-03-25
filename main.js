@@ -284,5 +284,8 @@ for(var name in Game.creeps) {
 	}
 	if(creep.memory.role == 'builder') {
 		require('role_builder').base(creep);
-	}		
+	}	
+    
+    
+    
 }
