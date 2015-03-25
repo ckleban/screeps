@@ -31,12 +31,15 @@ var role_arena = {
             } else {
                 var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
                     filter: function(object) {
-                        return object.hitsMax < 4999;
+                        return object.hitsMax < 4999 && object.id!=creep.id;
                     }
                 });
                 creep.moveTo(target);               
 
             }
+            
+            
+            
             
             var attacktargets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
             if(attacktargets.length>2) {
