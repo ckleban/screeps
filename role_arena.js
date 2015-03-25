@@ -101,7 +101,7 @@ var role_arena = {
         if(targets.length>2) {
             creep.rangedMassAttack();
         } else if (targets.length>0) {
-            creep.rangedAttack(target);
+            creep.rangedAttack(targets[0]);
         }
         var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
         if(targets) {
@@ -137,7 +137,7 @@ var role_arena = {
             
             
             
-        } else if (energy){
+        } else if (energy.length>0){
             creep.moveTo(energy[0]);  
             creep.pickup(energy[0]);  
         } else {
