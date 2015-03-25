@@ -37,15 +37,16 @@ var role_arena = {
                 creep.moveTo(target);               
 
             }
-            var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
-            if(targets.length>2) {
+            
+            var attacktargets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
+            if(attacktargets.length>2) {
                 creep.rangedMassAttack();
-            } else if (targets.length>0) {
-                creep.rangedAttack(target);
+            } else if (attacktargets.length>0) {
+                creep.rangedAttack(attacktargets[0]);
             }
-            var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
+            var closetargets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
             if(targets) {
-                creep.attack(targets[0]);
+                creep.attack(closetargets[0]);
             }	
             
             
@@ -82,7 +83,7 @@ var role_arena = {
                 //Logic to find creep in range that has lowest health
         
         
-        console.log("Healer");
+        //console.log("Healer");
         var guy = creep.pos.findNearest(Game.MY_CREEPS, {
             filter: function(object) {
                 //return object.hits < object.hitsMax;
@@ -116,7 +117,7 @@ var role_arena = {
                 }
             }
             creep.rangedHeal(best_target);
-            creep.moveTo(best_target);
+            //creep.moveTo(best_target);
         } else {
             
             
