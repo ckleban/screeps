@@ -64,7 +64,22 @@ var role_arena = {
                 return object.hitsMax < 4999;
             }
 		});
-        creep.moveTo(target);
+        if (target){
+            
+            creep.moveTo(target);
+        } else {
+            
+            var guy = creep.pos.findNearest(Game.MY_CREEPS, {
+                filter: function(object) {
+                    //return object.name=="GladTough";
+                    return object.name=="GladHealer" && object.id!=creep.id;
+                }                                      
+            });
+            if (guy){       
+                creep.moveTo(guy);  
+            }
+        }
+        
         
         var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
         if(targets.length>2) {
