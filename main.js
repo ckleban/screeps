@@ -289,6 +289,8 @@ for(var name in Game.creeps) {
     if(creep.room.mode==Game.MODE_ARENA) {
         if (creep.name=='GladHealer'){
             require('role_arena').healer(creep); 
+        } else if (creep.name=='GladTough'){
+            require('role_arena').tough(creep); 
         } else {
             console.log(creep.name);
             require('role_arena').base(creep);

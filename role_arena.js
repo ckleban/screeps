@@ -37,7 +37,26 @@ var role_arena = {
 		
     },
  
- 
+    tough: function(creep) {
+    
+
+        
+        var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
+            filter: function(object) {
+                //return object.hitsMax < 4999;
+            }
+		});
+        creep.moveTo(target);
+        
+        var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
+        if(targets.length>2) {
+            creep.rangedMassAttack();
+        } else if (targets.length>0) {
+            creep.rangedAttack(target);
+        }
+	
+		
+    },
  
  	healer: function(creep) {
                 //Logic to find creep in range that has lowest health
