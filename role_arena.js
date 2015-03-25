@@ -39,7 +39,7 @@ var role_arena = {
  
  
  
- 	healer: function(creep,job,spot,spawn) {
+ 	healer: function(creep) {
                 //Logic to find creep in range that has lowest health
         
         
@@ -59,7 +59,7 @@ var role_arena = {
         }
         
         
-        
+        /*
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 3, {
 			filter: function(object) {
 				return object.hits < object.hitsMax;
@@ -97,6 +97,7 @@ var role_arena = {
             }
             creep.heal(best_target);
         } 
+        */
     }
 };
 
