@@ -123,17 +123,17 @@ var role_arena = {
                 return object.hits < object.hitsMax && object.id!=creep.id;
             }                                      
         });
-        if (guy){       
-            creep.moveTo(guy);  
+        
             
-        } else if (creep.energy > 1) {
+         if (creep.energy > 1) {
             //Game.STRUCTURE_PORTAL
             var portal = creep.pos.findNearest(Game.STRUCTURES);
             if (portal){
                 creep.moveTo(portal);
                 creep.transferEnergy(portal);
             }          
-            
+         } else if (guy){       
+            creep.moveTo(guy);   
             
             
             
