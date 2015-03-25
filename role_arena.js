@@ -54,7 +54,10 @@ var role_arena = {
         } else if (targets.length>0) {
             creep.rangedAttack(target);
         }
-	
+        var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
+        if(targets) {
+            creep.attack(targets[0]);
+        }	
 		
     },
  
