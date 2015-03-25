@@ -13,11 +13,16 @@ var role_arena = {
                     creep.moveTo(target);
                     creep.pickup(target);
                 } else {
-                    var friend = creep.pos.findNearest(Game.MY_CREEPS);  
-                    if (friend){
-                        creep.moveTo(friend);
+                    var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
+                        filter: function(object) {
+                            return object.hitsMax < 4999 && object.id!=creep.id;
+                        }
+                    });
+                    if (target){
+                        
                     
-                    }   
+                        creep.moveTo(target);               
+                    }
                     
                 }
 		
@@ -29,13 +34,7 @@ var role_arena = {
                     creep.transferEnergy(portal);
                 }
             } else {
-                var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
-                    filter: function(object) {
-                        return object.hitsMax < 4999 && object.id!=creep.id;
-                    }
-                });
-                creep.moveTo(target);               
-
+               
             }
             
             
