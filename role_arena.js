@@ -12,6 +12,13 @@ var role_arena = {
                     
                     creep.moveTo(target);
                     creep.pickup(target);
+                } else {
+                    var friend = creep.pos.findNearest(Game.MY_CREEP);  
+                    if (friend){
+                        creep.moveTo(friend);
+                    
+                    }   
+                    
                 }
 		
             } else if (creep.energy > 1) {
@@ -23,11 +30,7 @@ var role_arena = {
                 }
             } else {
                 
-                var friend = creep.pos.findNearest(Game.MY_CREEP);  
-                if (friend){
-                    creep.moveTo(friend);
-                    
-                }
+
             }
         }
 	
