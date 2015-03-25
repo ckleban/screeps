@@ -14,7 +14,7 @@ var role_arena = {
             }
             else {
                 //Game.STRUCTURE_PORTAL
-                var target = source.pos.findNearest(Game.STRUCTURE_PORTAL);
+                var target = creep.pos.findNearest(Game.STRUCTURE_PORTAL);
 		    
                 creep.moveTo(target);
                 creep.transferEnergy(target);
