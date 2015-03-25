@@ -58,17 +58,31 @@ var role_arena = {
     },
  
     tough: function(creep) {
-    
 
-        
+
+        var energy = creep.pos.findNearest(Game.DROPPED_ENERGY);
+            
         var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
             filter: function(object) {
                 return object.hitsMax < 4999;
             }
 		});
         if (target){
-            
             creep.moveTo(target);
+            
+        } else if (creep.energy > 1) {
+                //Game.STRUCTURE_PORTAL
+                var portal = creep.pos.findNearest(Game.STRUCTURES);
+                if (portal){
+                    creep.moveTo(portal);
+                    creep.transferEnergy(portal);
+                } 
+            
+        } else if (energy) {
+                    
+                creep.moveTo(energy);
+                creep.pickup(energy);
+            
         } else {
             
             var guy = creep.pos.findNearest(Game.MY_CREEPS, {
@@ -99,6 +113,8 @@ var role_arena = {
  	healer: function(creep) {
                 //Logic to find creep in range that has lowest health
         
+        var energy = creep.pos.findInRange(Game.DROPPED_ENERGY, 5);
+        
         
         //console.log("Healer");
         var guy = creep.pos.findNearest(Game.MY_CREEPS, {
@@ -109,6 +125,21 @@ var role_arena = {
         });
         if (guy){       
             creep.moveTo(guy);  
+            
+        } else if (creep.energy > 1) {
+            //Game.STRUCTURE_PORTAL
+            var portal = creep.pos.findNearest(Game.STRUCTURES);
+            if (portal){
+                creep.moveTo(portal);
+                creep.transferEnergy(portal);
+            }          
+            
+            
+            
+            
+        } else if (energy){
+            creep.moveTo(energy[0]);  
+            creep.pickup(energy[0]);  
         } else {
             var guy2 = creep.pos.findNearest(Game.MY_CREEPS, {
                 filter: function(object) {
