@@ -287,6 +287,7 @@ for(var name in Game.creeps) {
 	}	
 
     if(creep.room.mode==Game.MODE_ARENA) {
+        console.log(creep.name);
 		require('role_arena').base(creep);
 	}	
     
