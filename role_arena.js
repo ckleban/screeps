@@ -45,7 +45,7 @@ var role_arena = {
                 creep.rangedAttack(attacktargets[0]);
             }
             var closetargets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
-            if(targets) {
+            if(closetargets) {
                 creep.attack(closetargets[0]);
             }	
             
