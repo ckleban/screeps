@@ -83,10 +83,11 @@ var role_arena = {
         }
         
         
-        /*
+        
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 3, {
 			filter: function(object) {
 				return object.hits < object.hitsMax;
+                return object.id!=creep.id;
 			}
 		});
         if(targets.length > 0) {
@@ -109,6 +110,7 @@ var role_arena = {
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 1, {
 			filter: function(object) {
 				return object.hits < object.hitsMax;
+                return object.id!=creep.id;
 			}
 		});
         if(targets.length > 0) {
@@ -121,7 +123,7 @@ var role_arena = {
             }
             creep.heal(best_target);
         } 
-        */
+        
     }
 };
 
