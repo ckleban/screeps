@@ -29,9 +29,26 @@ var role_arena = {
                     creep.transferEnergy(portal);
                 }
             } else {
-                
+                var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
+                    filter: function(object) {
+                        return object.hitsMax < 4999;
+                    }
+                });
+                creep.moveTo(target);               
 
             }
+            var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3);
+            if(targets.length>2) {
+                creep.rangedMassAttack();
+            } else if (targets.length>0) {
+                creep.rangedAttack(target);
+            }
+            var targets = creep.pos.findInRange(Game.HOSTILE_CREEPS, 1);
+            if(targets) {
+                creep.attack(targets[0]);
+            }	
+            
+            
         }
 	
 		
