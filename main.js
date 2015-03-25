@@ -285,6 +285,10 @@ for(var name in Game.creeps) {
 	if(creep.memory.role == 'builder') {
 		require('role_builder').base(creep);
 	}	
+
+    if(!creep.memory.role && creep.room.mode=Game.MODE_ARENA) {
+		require('role_arena').base(creep);
+	}	
     
     
     
