@@ -113,7 +113,7 @@ var role_arena = {
  	healer: function(creep) {
                 //Logic to find creep in range that has lowest health
         
-        var energy = creep.pos.findInRange(Game.DROPPED_ENERGY, 5);
+        var energies = creep.pos.findInRange(Game.DROPPED_ENERGY, 5);
         
         
         //console.log("Healer");
@@ -137,9 +137,9 @@ var role_arena = {
             
             
             
-        } else if (energy.length>0){
-            creep.moveTo(energy[0]);  
-            creep.pickup(energy[0]);  
+        } else if (energies.length>0){
+            creep.moveTo(energies[0]);  
+            creep.pickup(energies[0]);  
         } else {
             var guy2 = creep.pos.findNearest(Game.MY_CREEPS, {
                 filter: function(object) {
