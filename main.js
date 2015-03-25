@@ -32,11 +32,11 @@ for (var ii in Game.rooms){
 // if Game.MODE_ARENA
 for (var ii in Game.rooms){
     var room = Game.rooms[ii];
-    console.log(room.name);
-    console.log(room.mode);
+    //console.log(room.name);
+    //console.log(room.mode);
 
     if (room.mode=Game.MODE_ARENA){
-        console.log("ARENA TIME!!");
+        //console.log("ARENA TIME!!");
         
         
     } 
