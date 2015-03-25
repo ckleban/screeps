@@ -8,16 +8,20 @@ var role_arena = {
    	
             if(creep.energy < 1) {
                 var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
-                creep.moveTo(target);
-                creep.pickup(target);
+                if (target) {
+                    
+                    creep.moveTo(target);
+                    creep.pickup(target);
+                }
 		
             }
             else {
                 //Game.STRUCTURE_PORTAL
-                var target = creep.pos.findNearest(Game.STRUCTURE_PORTAL);
-		    
-                creep.moveTo(target);
-                creep.transferEnergy(target);
+                var portal = creep.pos.findNearest(Game.STRUCTURE_PORTAL);
+                if (portal){
+                    creep.moveTo(portal);
+                    creep.transferEnergy(portal);
+                }
             }
         }
 	
