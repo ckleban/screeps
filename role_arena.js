@@ -14,13 +14,19 @@ var role_arena = {
                     creep.pickup(target);
                 }
 		
-            }
-            else {
+            } else if (creep.energy > 1) {
                 //Game.STRUCTURE_PORTAL
                 var portal = creep.pos.findNearest(Game.STRUCTURE_PORTAL);
                 if (portal){
                     creep.moveTo(portal);
                     creep.transferEnergy(portal);
+                }
+            } else {
+                
+                var friend = creep.pos.findNearest(Game.MY_CREEP);  
+                if (friend){
+                    creep.moveTo(friend);
+                    
                 }
             }
         }
