@@ -86,17 +86,19 @@ var role_arena = {
         //console.log("Healer");
         var guy = creep.pos.findNearest(Game.MY_CREEPS, {
             filter: function(object) {
-                //return object.hits < object.hitsMax;
                 //return object.name=="GladTough";
-                return object.id!=creep.id;
-            }
-                                           
+                return object.hits < object.hitsMax && object.id!=creep.id;
+            }                                      
         });
-        if (guy){
-                
+        if (guy){       
             creep.moveTo(guy);  
         } else {
-            var guy2 = creep.pos.findNearest(Game.MY_CREEPS);
+            var guy2 = creep.pos.findNearest(Game.MY_CREEPS, {
+                filter: function(object) {
+                    //return object.name=="GladTough";
+                    return object.id!=creep.id;
+                }                                      
+            });
             creep.moveTo(guy2);
         }
         
@@ -126,8 +128,7 @@ var role_arena = {
         //Logic to find creep in range that has lowest health
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 1, {
 			filter: function(object) {
-				return object.hits < object.hitsMax;
-                //return object.id!=creep.id;
+				return object.hits < object.hitsMax && object.id!=creep.id;
 			}
 		});
         if(targets.length > 0) {
