@@ -44,6 +44,21 @@ var role_arena = {
         
         
         console.log("Healer");
+        var guy = creep.pos.findNearest(Game.MY_CREEPS, {
+            filter: function(object) {
+                return object.hits < object.hitsMax;
+            }
+                                           
+        });
+        if (guy){
+                
+            creep.moveTo(guy);  
+        } else {
+            var guy2 = creep.pos.findNearest(Game.MY_CREEPS);
+            creep.moveTo(guy2);
+        }
+        
+        
         
         var targets = creep.pos.findInRange(Game.MY_CREEPS, 3, {
 			filter: function(object) {
@@ -61,19 +76,7 @@ var role_arena = {
             creep.rangedHeal(best_target);
             creep.moveTo(best_target);
         } else {
-            var guy = creep.pos.findNearest(Game.MY_CREEPS, {
-                filter: function(object) {
-                    return object.hits < object.hitsMax;
-                }
-                                           
-            });
-            if (guy){
-                
-                creep.moveTo(guy);  
-            } else {
-                var guy2 = creep.pos.findNearest(Game.MY_CREEPS);
-                creep.moveTo(guy2);
-            }
+            
             
         }
         
