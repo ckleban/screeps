@@ -16,7 +16,7 @@ var role_arena = {
 		
             } else if (creep.energy > 1) {
                 //Game.STRUCTURE_PORTAL
-                var portal = creep.pos.findNearest(Game.STRUCTURE_PORTAL);
+                var portal = creep.pos.findNearest(Game.STRUCTURES);
                 if (portal){
                     creep.moveTo(portal);
                     creep.transferEnergy(portal);
