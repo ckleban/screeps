@@ -46,7 +46,8 @@ var role_arena = {
         console.log("Healer");
         var guy = creep.pos.findNearest(Game.MY_CREEPS, {
             filter: function(object) {
-                return object.hits < object.hitsMax;
+                //return object.hits < object.hitsMax;
+                return object.name="GladTough";
             }
                                            
         });
