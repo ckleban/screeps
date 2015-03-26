@@ -40,6 +40,25 @@ for (var ii in Game.rooms){
             //creep.pickup(targets[0]);
             console.log(room+" has energy: "+targets.length);
         }
+        
+        
+        var exits = room.find(Game.EXIT_TOP);
+        if(exits.length) {
+            console.log(room+" has exit on top: "+exits.length);
+        }
+        var exits = room.find(Game.EXIT_BOTTOM);
+        if(exits.length) {
+            console.log(room+" has exit on bottom: "+exits.length);
+        }
+        var exits = room.find(Game.EXIT_RIGHT);
+        if(exits.length) {
+            console.log(room+" has exit on right: "+exits.length);
+        }
+        var exits = room.find(Game.EXIT_LEFT);
+        if(exits.length) {
+            console.log(room+" has exit on left: "+exits.length);
+        }
+        
     } 
     
 }
@@ -286,7 +305,7 @@ for(var name in Game.creeps) {
 
     if(creep.room.mode==Game.MODE_ARENA) {
         //var mappie = Game.rooms;
-        console.log(JSON.stringify(creep, null, 4));
+        //console.log(JSON.stringify(creep, null, 4));
     
         if (creep.name=='GladHealer'){
             require('role_arena').healer(creep); 
