@@ -24,13 +24,10 @@ var role_arena = {
                     });
                     if (target){ 
                         creep.moveTo(target);               
-                    }
-                    
+                    }  else {
                     // else, leave room
-                    
-                    else {
                         
-                        var exitlocations = new array();
+                        var exitlocations = new Array();
                         var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
                         exits.forEach(function(entry) {
                             var exit = creep.pos.findClosest(entry);
