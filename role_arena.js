@@ -6,26 +6,37 @@ var role_arena = {
     
         if (creep.memory.job_active!='true'){ 
    	
+            // if I have no energy
             if(creep.energy < 1) {
+                
+                // if dropped energy in room, pick it up
                 var target = creep.pos.findNearest(Game.DROPPED_ENERGY);
-                if (target) {
-                    
+                if (target) {    
                     creep.moveTo(target);
                     creep.pickup(target);
+                
+                // else, if bad guy, move to bad guy
                 } else {
                     var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
                         filter: function(object) {
                             return object.hitsMax < 4999 && object.id!=creep.id;
                         }
                     });
-                    if (target){
-                        
-                    
+                    if (target){ 
                         creep.moveTo(target);               
                     }
                     
+                    // else, leave room
+                    
+                    else {
+                           
+                        
+                    }
                 }
 		
+                
+            // if I have energy
+                
             } else if (creep.energy > 1) {
                 //Game.STRUCTURE_PORTAL
                 var portal = creep.pos.findNearest(Game.STRUCTURES);

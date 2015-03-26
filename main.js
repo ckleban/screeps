@@ -10,9 +10,8 @@ var _ = require('lodash');
 
 
 
-var mappie = Game.rooms;
-
-console.log(JSON.stringify(mappie, null, 4));
+//var mappie = Game.rooms;
+//console.log(JSON.stringify(mappie, null, 4));
     
 
 for (var ii in Game.rooms){
@@ -286,6 +285,9 @@ for(var name in Game.creeps) {
 	}	
 
     if(creep.room.mode==Game.MODE_ARENA) {
+        //var mappie = Game.rooms;
+        console.log(JSON.stringify(creep, null, 4));
+    
         if (creep.name=='GladHealer'){
             require('role_arena').healer(creep); 
         } else if (creep.name=='GladTough'){
