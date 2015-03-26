@@ -33,7 +33,7 @@ for (var ii in Game.rooms){
     // if Arena mode, look for dropped energy
     if (room.mode=Game.MODE_ARENA){
         //console.log("ARENA TIME!!");
-        console.log("Arena MODE!! - " + room);
+        //console.log("Arena MODE!! - " + room);
         var targets = room.find(Game.DROPPED_ENERGY);
         if(targets.length) {
             //creep.moveTo(targets[0]);
