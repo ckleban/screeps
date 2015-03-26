@@ -27,24 +27,21 @@ for (var ii in Game.rooms){
     //console.log(objects);
     //console.log(JSON.stringify(objects, null, 4));
     
-}
-
-// if Game.MODE_ARENA
-for (var ii in Game.rooms){
-    var room = Game.rooms[ii];
-    //console.log(room.name);
-    //console.log(room.mode);
-
+    
+    
+    // if Arena mode, look for dropped energy
     if (room.mode=Game.MODE_ARENA){
         //console.log("ARENA TIME!!");
         
-        
+        var targets = room.find(Game.DROPPED_ENERGY);
+        if(targets.length) {
+            //creep.moveTo(targets[0]);
+            //creep.pickup(targets[0]);
+            console.log(room+" has energy: "+targets.length);
+        }
     } 
-
     
-} 
-
-
+}
 
 //console.log(Game.time);
 //if (Game.time<1){
