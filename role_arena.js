@@ -37,7 +37,7 @@ var role_arena = {
                         });
                         
                         //console.log(room+" has exit on top: "+exits.length);
-                        //console.log(JSON.stringify(exitlocations, null, 4));
+                        console.log(JSON.stringify(exitlocations, null, 4));
                         
                     }
 
