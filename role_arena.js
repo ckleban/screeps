@@ -37,8 +37,13 @@ var role_arena = {
                         });
                         
                         //console.log(room+" has exit on top: "+exits.length);
-                        console.log(JSON.stringify(exitlocations, null, 4));
+                        //console.log(JSON.stringify(exitlocations, null, 4));
                         
+                        
+                        /// put logic here to find bet exit
+                        // for now, ust pick one
+                        
+                        creep.moveTo(exitlocations[0]);
                     }
 
                         
