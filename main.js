@@ -10,7 +10,7 @@ var _ = require('lodash');
 
 
 
-var mappie = Game.map;
+var mappie = Game.rooms;
 
 console.log(JSON.stringify(mappie, null, 4));
     
