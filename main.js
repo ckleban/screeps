@@ -10,8 +10,10 @@ var _ = require('lodash');
 
 
 
+var mappie = Game.map;
 
-
+console.log(JSON.stringify(mappie, null, 4));
+    
 
 for (var ii in Game.rooms){
     var room = Game.rooms[ii];
