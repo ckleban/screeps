@@ -29,10 +29,29 @@ var role_arena = {
                     // else, leave room
                     
                     else {
-                           
                         
+                        var exitlocations = new array();
+                        var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
+                        exits.forEach(function(entry) {
+                            var exit = creep.pos.findClosest(entry);
+                            if (exit) {
+                                exitlocations.push(exit.pos);   
+                            }
+                        });
+                        
+                        //console.log(room+" has exit on top: "+exits.length);
+                        console.log(JSON.stringify(exitlocations, null, 4));
+        
                     }
+
+                        
+                        
+                        
+                        
+                        
+                        
                 }
+            
 		
                 
             // if I have energy

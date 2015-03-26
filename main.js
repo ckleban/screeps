@@ -47,24 +47,24 @@ for (var ii in Game.rooms){
         
         var exits = room.find(Game.EXIT_TOP);
         if(exits.length) {
-            console.log(room+" has exit on top: "+exits.length);
-            console.log(JSON.stringify(exits[0], null, 4));
-   
+            //console.log(room+" has exit on top: "+exits.length);
+            //console.log(JSON.stringify(exits[0], null, 4));
+        
         }
         var exits = room.find(Game.EXIT_BOTTOM);
         if(exits.length) {
-            console.log(room+" has exit on bottom: "+exits.length);
-            console.log(JSON.stringify(exits[0], null, 4));
+            //console.log(room+" has exit on bottom: "+exits.length);
+            //console.log(JSON.stringify(exits[0], null, 4));
         }
         var exits = room.find(Game.EXIT_RIGHT);
         if(exits.length) {
-             console.log(JSON.stringify(exits[0], null, 4));
-           console.log(room+" has exit on right: "+exits.length);
+            //console.log(JSON.stringify(exits[0], null, 4));
+            //console.log(room+" has exit on right: "+exits.length);
         }
         var exits = room.find(Game.EXIT_LEFT);
         if(exits.length) {
-             console.log(JSON.stringify(exits[0], null, 4));
-           console.log(room+" has exit on left: "+exits.length);
+            //console.log(JSON.stringify(exits[0], null, 4));
+            //console.log(room+" has exit on left: "+exits.length);
         }
 
         
