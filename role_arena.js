@@ -11,7 +11,7 @@ var role_arena = {
                 
             } else {
                 console.log("NEW ROOM");
-                rooms[creep.memory.room.name].memory.test="test";
+                rooms[creep.memory.room].memory.test="test";
             }
         
    	        console.log(creep.memory.leaving.name + " - " + creep.memory.room.name);
