@@ -18,7 +18,7 @@ var _ = require('lodash');
 
 // init Memory
 if (!Memory.map){
-    Memory.map = new{};
+    Memory.map = {};
     
 }
 
