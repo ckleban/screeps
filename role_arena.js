@@ -36,12 +36,26 @@ var role_arena = {
                             var exit = creep.pos.findClosest(entry);
                             if (exit) {    
                                 exitlocations[entry].push(exit.pos);   
+                                
+                                var path = creep.pos.findPathTo(exit.pos);
+                                if( path.length ) {
+                                    consolg.log(path.length);
+                                    //creep.move(path[0].direction);
+                                }                       
+
                             }
                         });
                         //console.log(exitlocations);
                         //console.log(room+" has exit on top: "+exits.length);
                         console.log(JSON.stringify(exitlocations, null, 4));
                         
+                        var path = creep.pos.findPathTo(target, {maxOps: 200});
+                        if( !path.length || !target.equalsTo(path[path.length - 1]) ) {
+                            path = creep.pos.findPathTo(target, {maxOps: 1000, ignoreDestructibleStructures: true});
+                        }
+                        if( path.length ) {
+                            creep.move(path[0].direction);
+                        }                   
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
