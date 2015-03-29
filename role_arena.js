@@ -83,12 +83,11 @@ var role_arena = {
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
                                     console.log(entry + " - " + path.length);
-                                    //creep.move(path[0].direction);
                                     exitlocations[entry].push(exit.pos);   
                                     exitlocations[entry][0].length=path.length;  
                                     
-                                    //exitroom=creep.room.memory.exit[entry];
                                     if (Memory.map[currentroom].exit){
+                                        console.log("TRUE");
                                         exitroom=Memory.map[currentroom].exit[entry];
                                         if (exitroom) {
                                             room=Memory.map[exitroom];
