@@ -310,7 +310,25 @@ var role_arena = {
                     return object.id!=creep.id;
                 }                                      
             });
-            creep.moveTo(guy2);
+            
+            if (guy2){       
+                creep.moveTo(guy2); 
+            } else{
+                
+                var route2 = Game.map.findRoute(creep.room, Game.creeps.GladTough.room);
+                //console.log('Now heading to room '+route[0].room);
+                var exit2 = creep.pos.findClosest(route2[0].exit);
+                creep.moveTo(exit2);
+                    
+                
+                
+                
+            }       
+            
+            
+            
+            
+            
         }
         
         
