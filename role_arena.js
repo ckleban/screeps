@@ -68,9 +68,9 @@ var role_arena = {
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
-                        var leave = exitlocations[0];
-                        creep.moveTo(leave);
-                        //creep.memory.leaving=leave;
+                        //var leave = exitlocations[0];
+                        creep.moveTo(bestpos);
+                        creep.memory.leaving=bestexit;
                         
                     }
 
