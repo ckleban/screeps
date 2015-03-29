@@ -34,6 +34,8 @@ for (var ii in Game.rooms){
     if (room.mode=Game.MODE_ARENA){
         //console.log("ARENA TIME!!");
         //console.log("Arena MODE!! - " + room);
+        room.memory.lastseentime=Game.time;
+            
         var targets = room.find(Game.DROPPED_ENERGY);
         if(targets.length) {
             //creep.moveTo(targets[0]);
