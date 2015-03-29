@@ -118,7 +118,7 @@ var role_arena = {
                                     if (hasenergy=="true"){
                                         bestpos=exit.pos;
                                         bestexit=entry;
-                                    
+                                    }
                                     if (path.length<closest && timediff>500){
                                         bestpos=exit.pos;
                                         bestexit=entry;
