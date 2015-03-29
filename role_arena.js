@@ -86,6 +86,8 @@ var role_arena = {
                                     exitlocations[entry].push(exit.pos);   
                                     exitlocations[entry][0].length=path.length;  
                                     
+                                    
+                                    // if been there before
                                     if (Memory.map[currentroom].exit){
                                         exitroom=Memory.map[currentroom].exit[entry];
                                         if (exitroom) {
@@ -138,11 +140,11 @@ var role_arena = {
                         console.log(JSON.stringify(exitlocations, null, 4));
                         console.log("-------");
                         console.log(JSON.stringify(bestpos, null, 4));
-                        console.log(bestexit);
                         console.log("-------");
                         */
                         
-                                          
+                        console.log("Going to Exit:" + bestexit);
+                 
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
