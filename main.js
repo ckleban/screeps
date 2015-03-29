@@ -45,12 +45,12 @@ for (var ii in Game.rooms){
         //console.log("Arena MODE!! - " + room);
         
         // make sure room entry exists in global map object
-        if (!Memory.map[room]){
-            Memory.map[room]={};    
+        if (!Memory.map[room.name]){
+            Memory.map[room.name]={};    
         }
         
         // add entry to map[room] stating when we last were in room
-        Memory.map[room].lastseentime=Game.time;
+        Memory.map[room.name].lastseentime=Game.time;
         //room.memory.lastseentime=Game.time;
             
         var targets = room.find(Game.DROPPED_ENERGY);
@@ -58,14 +58,14 @@ for (var ii in Game.rooms){
             //creep.moveTo(targets[0]);
             //creep.pickup(targets[0]);
             //console.log(room+" has energy: "+targets.length);
-            Memory.map[room].energy="true";
-            Memory.map[room].energytime=Game.time;
+            Memory.map[room.name].energy="true";
+            Memory.map[room.name].energytime=Game.time;
             //room.memory.energy="true";
             //room.memory.energytime=Game.time;
             
         } else {
-            Memory.map[room].energy="false";
-            Memory.map[room].energytime=Game.time;           
+            Memory.map[room.name].energy="false";
+            Memory.map[room.name].energytime=Game.time;           
             //room.memory.energy="false";
             //room.memory.energytime=Game.time;           
             
