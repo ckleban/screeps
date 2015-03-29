@@ -71,7 +71,7 @@ var role_arena = {
                         
                         
                         exits.forEach(function(entry) {
-                            //console.log(entry);
+                            console.log(entry);
                             exitlocations[entry] = new Array();
                         
                             timdiff=1000000;
