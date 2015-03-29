@@ -70,8 +70,8 @@ var role_arena = {
                                     if (exitroom) {
                                         room=Game.rooms[exitroom];
                                         if (room){
-                                            console.log("exit:"+entry+"goes to room:"+room);
-                                            console.log(Game.time-room.memory.lastseentime);
+                                            //console.log("exit:"+entry+"goes to room:"+room);
+                                            //console.log(Game.time-room.memory.lastseentime);
                                             var timediff=Game.time-room.memory.lastseentime;
                                         }
                                         
@@ -89,6 +89,9 @@ var role_arena = {
                                     if (path.length<closest && timediff>100){
                                         bestpos=exit.pos;
                                         bestexit=entry;
+                                    } else if (path.length<closest && !timediff){
+                                         bestpos=exit.pos;
+                                        bestexit=entry;                                          
                                     }
                                 }      
                                 
