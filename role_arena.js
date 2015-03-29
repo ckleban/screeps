@@ -109,7 +109,7 @@ var role_arena = {
             
         var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
             filter: function(object) {
-                return object.hitsMax < 4999;
+                return object.hitsMax < 999 && object.energy>0;
             }
 		});
         if (target){
