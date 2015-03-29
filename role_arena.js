@@ -39,7 +39,7 @@ var role_arena = {
                                 
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
-                                    consolg.log(path.length);
+                                    console.log(path.length);
                                     //creep.move(path[0].direction);
                                 }                       
 
