@@ -69,8 +69,10 @@ var role_arena = {
                                     exitroom=creep.room.memory.exit[entry];
                                     if (exitroom) {
                                         room=Game.rooms[exitroom];
-                                        console.log("exit:"+entry+"goes to room:"+room);
-                                        console.log(Game.time-room.memory.lastseentime);
+                                        if (room){
+                                            console.log("exit:"+entry+"goes to room:"+room);
+                                            console.log(Game.time-room.memory.lastseentime);
+                                        }
                                         
                                     }
                                     
