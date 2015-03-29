@@ -31,7 +31,7 @@ var role_arena = {
                         var exitlocations = new Object();
                         
                         var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
-                        var closest = 0;
+                        var closest = 500;
                         var bestpos= {};
                         var bestexit=0;
                         exits.forEach(function(entry) {
