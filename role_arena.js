@@ -97,7 +97,8 @@ var role_arena = {
                                                 
                                                 //console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
-                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff);
+                                                var hasenergy=room.energy
+                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff + " energy: "+hasenergy);
                                                 //console.log("TRUE3");
                                             
                                             } else {
