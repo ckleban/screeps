@@ -83,16 +83,18 @@ var role_arena = {
                                     exitlocations[entry][0].length=path.length;  
                                     
                                     //exitroom=creep.room.memory.exit[entry];
-                                    exitroom=Memory.map[currentroom].exit[entry];
-                                    if (exitroom) {
-                                        room=Memory.map[exitroom];
-                                        //Memory.map[previousroom].exit
-                                        if (room){
-                                            console.log("exit:"+entry+"goes to room:"+room);
-                                            console.log(Game.time-room.lastseentime);
-                                            timediff=Game.time-room.lastseentime;
-                                        }
+                                    if (Memory.map[currentroom]){
+                                        exitroom=Memory.map[currentroom].exit[entry];
+                                        if (exitroom) {
+                                            room=Memory.map[exitroom];
+                                            //Memory.map[previousroom].exit
+                                            if (room){
+                                                console.log("exit:"+entry+"goes to room:"+room);
+                                                console.log(Game.time-room.lastseentime);
+                                                timediff=Game.time-room.lastseentime;
+                                            }   
                                         
+                                        }
                                     }
                                     
                 
