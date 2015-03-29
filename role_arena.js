@@ -60,26 +60,29 @@ var role_arena = {
                         //var exitlocations = new Array();
                         var exitlocations = new Object();
                         
-                        var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
+                        var exits=[Game.EXIT_TOP,Game.EXIT_RIGHT,Game.EXIT_BOTTOM,Game.EXIT_LEFT];
                         var closest = 500;
                         var bestpos= {};
                         var bestexit=0;
                         var timediff=0;
                         
                         
+                        
+                        
+                        
                         exits.forEach(function(entry) {
-                            console.log(entry);
-                            
+                            //console.log(entry);
+                            exitlocations[entry] = new Array();
+                        
                             timdiff=1000000;
                         
-                            exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
                             
                             if (exit) {    
                                 
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
-                                    //console.log(path.length);
+                                    console.log(entry + " - " + path.length);
                                     //creep.move(path[0].direction);
                                     exitlocations[entry].push(exit.pos);   
                                     exitlocations[entry][0].length=path.length;  
