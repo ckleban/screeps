@@ -35,13 +35,16 @@ var role_arena = {
                             exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
                             if (exit) {    
-                                exitlocations[entry].push(exit.pos);   
                                 
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
                                     console.log(path.length);
                                     //creep.move(path[0].direction);
-                                }                       
+                                    exitlocations[entry].push(exit.pos);   
+                                    exitlocations[entry].length=path.length;   
+                                
+                                }      
+                                
 
                             }
                         });
@@ -53,8 +56,8 @@ var role_arena = {
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
-                        //var leave = exitlocations[0];
-                        //creep.moveTo(leave);
+                        var leave = exitlocations[0];
+                        creep.moveTo(leave);
                         //creep.memory.leaving=leave;
                         
                     }
