@@ -164,7 +164,7 @@ var role_arena = {
  
  	healer: function(creep) {
         
-        if (creep.hits<100){
+        if (creep.hits<200){
             creep.suicide();
             
         }
