@@ -163,6 +163,10 @@ var role_arena = {
     },
  
  	healer: function(creep) {
+        
+        if (creep.health<100){
+            creep.sucicide();
+        }
                 //Logic to find creep in range that has lowest health
         
         var energies = creep.pos.findInRange(Game.DROPPED_ENERGY, 5);
