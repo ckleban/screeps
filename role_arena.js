@@ -89,7 +89,7 @@ var role_arena = {
                                             room=Memory.map[exitroom];
                                             //Memory.map[previousroom].exit
                                             if (room){
-                                                console.log("exit:"+entry+"goes to room:"+room);
+                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+room.name);
                                                 console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
                                             }   
