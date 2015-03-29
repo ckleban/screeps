@@ -75,7 +75,7 @@ var role_arena = {
                                         room=Game.rooms[exitroom];
                                         if (room){
                                             console.log("exit:"+entry+"goes to room:"+room);
-                                            //console.log(Game.time-room.memory.lastseentime);
+                                            console.log(Game.time-room.memory.lastseentime);
                                             var timediff=Game.time-room.memory.lastseentime;
                                         }
                                         
