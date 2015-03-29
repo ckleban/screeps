@@ -35,7 +35,7 @@ for (var ii in Game.rooms){
     if (room.mode=Game.MODE_ARENA){
         //console.log("ARENA TIME!!");
         //console.log("Arena MODE!! - " + room);
-        Game.memory.map[room].lastseentime=Game.time;
+        Memory.map[room].lastseentime=Game.time;
         
         
         room.memory.lastseentime=Game.time;
