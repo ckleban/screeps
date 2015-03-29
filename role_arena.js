@@ -65,7 +65,7 @@ var role_arena = {
                         var bestpos= {};
                         var bestexit=0;
                         var timediff=0;
-                        
+                        var hasenergy="";
                         
                         
                         
@@ -97,7 +97,7 @@ var role_arena = {
                                                 
                                                 //console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
-                                                var hasenergy=room.energy
+                                                hasenergy=room.energy
                                                 console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff + " energy: "+hasenergy);
                                                 //console.log("TRUE3");
                                             
@@ -115,9 +115,11 @@ var role_arena = {
         
                                     
                                     
+                                    if (hasenergy=="true"){
+                                        bestpos=exit.pos;
+                                        bestexit=entry;
                                     
-                                    
-                                    if (path.length<closest && timediff>100){
+                                    if (path.length<closest && timediff>500){
                                         bestpos=exit.pos;
                                         bestexit=entry;
                                     } else if (path.length<closest && timediff==1000000){
