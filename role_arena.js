@@ -110,8 +110,7 @@ var role_arena = {
     },
  
     tough: function(creep) {
-
-
+        
         var energy = creep.pos.findNearest(Game.DROPPED_ENERGY);
             
         var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
@@ -170,7 +169,7 @@ var role_arena = {
         }
                 //Logic to find creep in range that has lowest health
         
-        var energies = creep.pos.findInRange(Game.DROPPED_ENERGY, 5);
+        var energies = creep.pos.findInRange(Game.DROPPED_ENERGY, 50);
         
         
         //console.log("Healer");
