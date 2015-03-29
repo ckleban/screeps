@@ -87,9 +87,9 @@ var role_arena = {
                                     exitlocations[entry][0].length=path.length;  
                                     
                                     if (Memory.map[currentroom].exit){
-                                        console.log("TRUE");
                                         exitroom=Memory.map[currentroom].exit[entry];
                                         if (exitroom) {
+                                            console.log("TRUE");
                                             room=Memory.map[exitroom];
                                             //Memory.map[previousroom].exit
                                             if (room){
