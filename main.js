@@ -19,7 +19,6 @@ var _ = require('lodash');
 // init Memory
 if (!Memory.map){
     Memory.map = {};
-    
 }
 
 
@@ -44,6 +43,13 @@ for (var ii in Game.rooms){
     if (room.mode=Game.MODE_ARENA){
         //console.log("ARENA TIME!!");
         //console.log("Arena MODE!! - " + room);
+        
+        // make sure room entry exists in global map object
+        if (!Memory.map[room]){
+            Memory.map[room]={};    
+        }
+        
+        // add entry to map[room] stating when we last were in room
         Memory.map[room].lastseentime=Game.time;
         
         
