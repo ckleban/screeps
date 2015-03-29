@@ -74,7 +74,7 @@ var role_arena = {
                             console.log("Exit: "+entry);
                             exitlocations[entry] = new Array();
                         
-                            timdiff=1000000;
+                            timediff=1000000;
                         
                             var exit = creep.pos.findClosest(entry);
                             
