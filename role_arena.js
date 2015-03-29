@@ -164,8 +164,9 @@ var role_arena = {
  
  	healer: function(creep) {
         
-        if (creep.health<100){
-            creep.sucicide();
+        if (creep.hits<100){
+            creep.suicide();
+            
         }
                 //Logic to find creep in range that has lowest health
         
