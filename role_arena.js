@@ -237,8 +237,20 @@ var role_arena = {
                     return object.name!="GladHealer" && object.id!=creep.id;
                 }                                      
             });
+            
+            // if nothing better to do, move to friend in room or in another room
             if (guy){       
                 creep.moveTo(guy);  
+            } else{
+                
+                var route2 = Game.map.findRoute(creep.room, Game.creeps.GladRanger.room);
+                //console.log('Now heading to room '+route[0].room);
+                var exit2 = creep.pos.findClosest(route[0].exit);
+                creep.moveTo(exit2);
+                
+                
+                
+                
             }
         }
         
