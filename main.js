@@ -12,7 +12,16 @@ var _ = require('lodash');
 
 //var mappie = Game.rooms;
 //console.log(JSON.stringify(mappie, null, 4));
+
+
+
+
+// init Memory
+if (Memory.map){
+    Memory.map = new{};
     
+}
+
 
 for (var ii in Game.rooms){
     //console.log(ii);
