@@ -54,10 +54,12 @@ var role_arena = {
                         var closest = 500;
                         var bestpos= {};
                         var bestexit=0;
-                        
+                        var timdiff=0;
                         
                         
                         exits.forEach(function(entry) {
+                            timdiff=1000000;
+                        
                             exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
                             
@@ -76,7 +78,7 @@ var role_arena = {
                                         if (room){
                                             console.log("exit:"+entry+"goes to room:"+room);
                                             console.log(Game.time-room.memory.lastseentime);
-                                            var timediff=Game.time-room.memory.lastseentime;
+                                            timediff=Game.time-room.memory.lastseentime;
                                         }
                                         
                                     }
@@ -94,8 +96,8 @@ var role_arena = {
                                         bestpos=exit.pos;
                                         bestexit=entry;
                                     } else if (path.length<closest && !timediff){
-                                         bestpos=exit.pos;
-                                        bestexit=entry;                                          
+                                        //bestpos=exit.pos;
+                                        //bestexit=entry;                                          
                                     }
                                 }      
                                 
