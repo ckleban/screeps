@@ -51,47 +51,27 @@ for (var ii in Game.rooms){
         
         // add entry to map[room] stating when we last were in room
         Memory.map[room].lastseentime=Game.time;
-        
-        
-        room.memory.lastseentime=Game.time;
+        //room.memory.lastseentime=Game.time;
             
         var targets = room.find(Game.DROPPED_ENERGY);
         if(targets.length) {
             //creep.moveTo(targets[0]);
             //creep.pickup(targets[0]);
             //console.log(room+" has energy: "+targets.length);
-            
-            room.memory.energy="true";
-            room.memory.energytime=Game.time;
+            Memory.map[room].energy="true";
+            Memory.map[room].energytime=Game.time;
+            //room.memory.energy="true";
+            //room.memory.energytime=Game.time;
             
         } else {
-            room.memory.energy="false";
-            room.memory.energytime=Game.time;           
+            Memory.map[room].energy="false";
+            Memory.map[room].energytime=Game.time;           
+            //room.memory.energy="false";
+            //room.memory.energytime=Game.time;           
             
         }
         
-        var exits = room.find(Game.EXIT_TOP);
-        if(exits.length) {
-            //console.log(room+" has exit on top: "+exits.length);
-            //console.log(JSON.stringify(exits[0], null, 4));
-        
-        }
-        var exits = room.find(Game.EXIT_BOTTOM);
-        if(exits.length) {
-            //console.log(room+" has exit on bottom: "+exits.length);
-            //console.log(JSON.stringify(exits[0], null, 4));
-        }
-        var exits = room.find(Game.EXIT_RIGHT);
-        if(exits.length) {
-            //console.log(JSON.stringify(exits[0], null, 4));
-            //console.log(room+" has exit on right: "+exits.length);
-        }
-        var exits = room.find(Game.EXIT_LEFT);
-        if(exits.length) {
-            //console.log(JSON.stringify(exits[0], null, 4));
-            //console.log(room+" has exit on left: "+exits.length);
-        }
-
+   
         
     } 
     

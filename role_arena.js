@@ -7,23 +7,31 @@ var role_arena = {
         if (creep.memory.job_active!='true'){ 
             
             
-            creep.memory.leaving=0;
             
+            var currentroom=creep.room.name;
+            var previousroom=creep.memory.room.name;
             //console.log(creep.room.name + " - " + creep.memory.room.name);
-            if (creep.room.name==creep.memory.room.name){
+            if (currentroom==previousroom){
                 //console.log("SAME ROOM");
                 
             } else {
-                console.log("NEW ROOM");
-                if (Game.rooms[creep.memory.room.name]){
-                    if (!Game.rooms[creep.memory.room.name].memory.exit){
-                        Game.rooms[creep.memory.room.name].memory.exit = {};   
-                    }
                 
-                    Game.rooms[creep.memory.room.name].memory.exit[creep.memory.leaving]=creep.room.name;
-                    //var creep = Game.getObjectById(job.jobmemory[role][spot]);
+                console.log("NEW ROOM");
+                
+                // if new room, update map object showing which rooms are connected to what other rooms  
+                if (!Memory.map[previousroom].exit){
+                    Memory.map[previousroom].exit = {};   
                 }
+                Memory.map[previousroom].exit[creep.memory.leaving]=currentroom;
+                
             }
+            
+            
+            creep.memory.leaving=0;
+            
+            
+            
+            
         
    	        //console.log(creep.memory.leaving.name + " - " + creep.memory.room.name);
            
@@ -74,13 +82,15 @@ var role_arena = {
                                     exitlocations[entry].push(exit.pos);   
                                     exitlocations[entry][0].length=path.length;  
                                     
-                                    exitroom=creep.room.memory.exit[entry];
+                                    //exitroom=creep.room.memory.exit[entry];
+                                    exitroom=Memory.map[currentroom].exit[entry];
                                     if (exitroom) {
-                                        room=Game.rooms[exitroom];
+                                        room=Memory.map[exitroom];
+                                        //Memory.map[previousroom].exit
                                         if (room){
                                             console.log("exit:"+entry+"goes to room:"+room);
-                                            console.log(Game.time-room.memory.lastseentime);
-                                            timediff=Game.time-room.memory.lastseentime;
+                                            console.log(Game.time-room.lastseentime);
+                                            timediff=Game.time-room.lastseentime;
                                         }
                                         
                                     }
