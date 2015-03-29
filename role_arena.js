@@ -10,9 +10,9 @@ var role_arena = {
                 //console.log("SAME ROOM");
                 
             } else {
-                //console.log("NEW ROOM");
+                console.log("NEW ROOM");
                 Game.rooms[creep.memory.room.name].memory.test="test";
-                var creep = Game.getObjectById(job.jobmemory[role][spot]);
+                //var creep = Game.getObjectById(job.jobmemory[role][spot]);
    
             }
         
