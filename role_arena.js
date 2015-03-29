@@ -5,8 +5,7 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
-   	    console.log(creep.memory.leaving + " - " + creep.memory.room);
-            
+   	        console.log(creep.memory.leaving.name + " - " + creep.memory.room);
             // if I have no energy
             if(creep.energy < 1) {
                 
@@ -89,7 +88,8 @@ var role_arena = {
             
         }
 	
-		
+	   creep.memory.room=creep.room;
+            	
     },
  
     tough: function(creep) {
