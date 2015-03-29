@@ -15,6 +15,7 @@ var _ = require('lodash');
     
 
 for (var ii in Game.rooms){
+    console.log(ii);
     var room = Game.rooms[ii];
     //console.log(room.name);
     //room.memory.homeroom=room.name;
@@ -44,6 +45,10 @@ for (var ii in Game.rooms){
             
             room.memory.energy="true";
             room.memory.energytime=Game.time;
+            
+        } else {
+            room.memory.energy="false";
+            room.memory.energytime=Game.time;           
             
         }
         

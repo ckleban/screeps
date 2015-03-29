@@ -7,11 +7,13 @@ var role_arena = {
         if (creep.memory.job_active!='true'){ 
             console.log(creep.room.name + " - " + creep.memory.room.name);
             if (creep.room.name==creep.memory.room.name){
-                console.log("SAME ROOM");
+                //console.log("SAME ROOM");
                 
             } else {
-                console.log("NEW ROOM");
+                //console.log("NEW ROOM");
                 Game.rooms[creep.memory.room.name].memory.test="test";
+                var creep = Game.getObjectById(job.jobmemory[role][spot]);
+   
             }
         
    	        console.log(creep.memory.leaving.name + " - " + creep.memory.room.name);
