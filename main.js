@@ -41,7 +41,7 @@ for (var ii in Game.rooms){
         if(targets.length) {
             //creep.moveTo(targets[0]);
             //creep.pickup(targets[0]);
-            console.log(room+" has energy: "+targets.length);
+            //console.log(room+" has energy: "+targets.length);
             
             room.memory.energy="true";
             room.memory.energytime=Game.time;
