@@ -64,7 +64,24 @@ var role_arena = {
                                     //console.log(path.length);
                                     //creep.move(path[0].direction);
                                     exitlocations[entry].push(exit.pos);   
-                                    exitlocations[entry][0].length=path.length;   
+                                    exitlocations[entry][0].length=path.length;  
+                                    
+                                    exitroom=creep.room.memory.exit[entry];
+                                    if (exitroom) {
+                                        console.log("exit:"+entry+"goes to room:"+exitroom);
+                                        console.log(Game.time-exitroom.memory.lastseentime);
+                                        
+                                    }
+                                    
+                
+                    //      Game.rooms[creep.memory.room.name].memory.exit[creep.memory.leaving]=creep.room.name;
+                
+                                    //var creep = Game.getObjectById(job.jobmemory[role][spot]);
+        
+                                    
+                                    
+                                    
+                                    
                                     if (path.length<closest){
                                         bestpos=exit.pos;
                                         bestexit=entry;
