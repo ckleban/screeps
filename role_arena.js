@@ -5,6 +5,14 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
+            
+            if (creep.room==creep.memory.room)
+                console.log("SAME ROOM")
+                
+            } else {
+                console.log("NEW ROOM")
+            }
+        
    	        console.log(creep.memory.leaving.name + " - " + creep.memory.room.name);
             // if I have no energy
             if(creep.energy < 1) {
@@ -34,6 +42,9 @@ var role_arena = {
                         var closest = 500;
                         var bestpos= {};
                         var bestexit=0;
+                        
+                        
+                        
                         exits.forEach(function(entry) {
                             exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
@@ -55,14 +66,18 @@ var role_arena = {
 
                             }
                         });
+                        
+                        
+                        
                         //console.log(exitlocations);
                         //console.log(room+" has exit on top: "+exits.length);
+                        /*
                         console.log(JSON.stringify(exitlocations, null, 4));
                         console.log("-------");
                         console.log(JSON.stringify(bestpos, null, 4));
                         console.log(bestexit);
                         console.log("-------");
-                    
+                        */
                         
                                           
                         
