@@ -5,6 +5,10 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
+            
+            
+            creep.memory.leaving=0;
+            
             //console.log(creep.room.name + " - " + creep.memory.room.name);
             if (creep.room.name==creep.memory.room.name){
                 //console.log("SAME ROOM");
@@ -70,7 +74,7 @@ var role_arena = {
                                     if (exitroom) {
                                         room=Game.rooms[exitroom];
                                         if (room){
-                                            //console.log("exit:"+entry+"goes to room:"+room);
+                                            console.log("exit:"+entry+"goes to room:"+room);
                                             //console.log(Game.time-room.memory.lastseentime);
                                             var timediff=Game.time-room.memory.lastseentime;
                                         }
