@@ -5,7 +5,8 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
-   	
+   	    console.log(creep.memory.leaving + " - " + creep.memory.room);
+            
             // if I have no energy
             if(creep.energy < 1) {
                 
@@ -42,8 +43,10 @@ var role_arena = {
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
+                        var leave = exitlocations[0];
+                        creep.moveTo(leave);
+                        creep.memory.leaving=leave;
                         
-                        creep.moveTo(exitlocations[0]);
                     }
 
                         
