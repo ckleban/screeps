@@ -109,9 +109,9 @@ var role_arena = {
                                     if (path.length<closest && timediff>100){
                                         bestpos=exit.pos;
                                         bestexit=entry;
-                                    } else if (path.length<closest && !timediff){
-                                        //bestpos=exit.pos;
-                                        //bestexit=entry;                                          
+                                    } else if (path.length<closest && timediff==1000000){
+                                        bestpos=exit.pos;
+                                        bestexit=entry;                                          
                                     }
                                 }      
                                 
