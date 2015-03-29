@@ -27,12 +27,15 @@ var role_arena = {
                     }  else {
                     // else, leave room
                         
-                        var exitlocations = new Array();
+                        //var exitlocations = new Array();
+                        var exitlocations = new Object();
+                        
                         var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
                         exits.forEach(function(entry) {
+                            var exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
-                            if (exit) {
-                                exitlocations.push(exit.pos);   
+                            if (exit) {    
+                                exitlocations[entry].push(exit.pos);   
                             }
                         });
                         
@@ -42,9 +45,9 @@ var role_arena = {
                         
                         /// put logic here to find bet exit
                         // for now, ust pick one
-                        var leave = exitlocations[0];
-                        creep.moveTo(leave);
-                        creep.memory.leaving=leave;
+                        //var leave = exitlocations[0];
+                        //creep.moveTo(leave);
+                        //creep.memory.leaving=leave;
                         
                     }
 
