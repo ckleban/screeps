@@ -56,7 +56,7 @@ var role_arena = {
                         var closest = 500;
                         var bestpos= {};
                         var bestexit=0;
-                        var timdiff=0;
+                        var timediff=0;
                         
                         
                         exits.forEach(function(entry) {
