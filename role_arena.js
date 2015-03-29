@@ -38,9 +38,9 @@ var role_arena = {
                                 exitlocations[entry].push(exit.pos);   
                             }
                         });
-                        console.log(exitlocations);
+                        //console.log(exitlocations);
                         //console.log(room+" has exit on top: "+exits.length);
-                        //console.log(JSON.stringify(exitlocations, null, 4));
+                        console.log(JSON.stringify(exitlocations, null, 4));
                         
                         
                         /// put logic here to find bet exit
