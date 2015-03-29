@@ -11,6 +11,9 @@ var role_arena = {
                 
             } else {
                 console.log("NEW ROOM");
+                if (!Game.rooms[creep.memory.room.name].memory.exit){
+                    Game.rooms[creep.memory.room.name].memory.exit = {};   
+                }
                 Game.rooms[creep.memory.room.name].memory.exit[creep.memory.leaving]=creep.room.name;
                 //var creep = Game.getObjectById(job.jobmemory[role][spot]);
    
