@@ -32,7 +32,7 @@ var role_arena = {
                         
                         var exits=[Game.EXIT_TOP,Game.EXIT_BOTTOM,Game.EXIT_RIGHT,Game.EXIT_LEFT];
                         exits.forEach(function(entry) {
-                            var exitlocations[entry] = new Array();
+                            exitlocations[entry] = new Array();
                             var exit = creep.pos.findClosest(entry);
                             if (exit) {    
                                 exitlocations[entry].push(exit.pos);   
