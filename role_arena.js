@@ -41,7 +41,7 @@ var role_arena = {
                                     console.log(path.length);
                                     //creep.move(path[0].direction);
                                     exitlocations[entry].push(exit.pos);   
-                                    exitlocations[entry].length=path.length;   
+                                    exitlocations[entry].push(path.length);   
                                 
                                 }      
                                 
