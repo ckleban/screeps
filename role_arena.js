@@ -5,7 +5,7 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
-            console.log(creep.room + " - " + creep.memory.room);
+            console.log(creep.room.name + " - " + creep.memory.room.name);
             if (creep.room==creep.memory.room){
                 console.log("SAME ROOM");
                 
