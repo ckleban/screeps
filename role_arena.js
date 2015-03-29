@@ -121,8 +121,8 @@ var role_arena = {
                                         bestpos=exit.pos;
                                         bestexit=entry;                                          
                                     } else {
-                                        bestpos=exit.pos;
-                                        bestexit=entry;                                         
+                                        //bestpos=exit.pos;
+                                        //bestexit=entry;                                         
                                     }
                                 }      
                                 
