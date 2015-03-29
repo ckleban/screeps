@@ -77,7 +77,7 @@ var role_arena = {
                                 
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
-                                    console.log(path.length);
+                                    //console.log(path.length);
                                     //creep.move(path[0].direction);
                                     exitlocations[entry].push(exit.pos);   
                                     exitlocations[entry][0].length=path.length;  
@@ -112,6 +112,9 @@ var role_arena = {
                                     } else if (path.length<closest && timediff==1000000){
                                         bestpos=exit.pos;
                                         bestexit=entry;                                          
+                                    } else {
+                                        bestpos=exit.pos;
+                                        bestexit=entry;                                         
                                     }
                                 }      
                                 
