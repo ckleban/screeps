@@ -5,7 +5,7 @@ var role_arena = {
     
     
         if (creep.memory.job_active!='true'){ 
-            
+            console.log(creep);
             
             
             var currentroom=creep.room.name;
@@ -71,7 +71,7 @@ var role_arena = {
                         
                         
                         exits.forEach(function(entry) {
-                            //console.log(entry);
+                            console.log("Exit: "+entry);
                             exitlocations[entry] = new Array();
                         
                             timdiff=1000000;
@@ -92,13 +92,14 @@ var role_arena = {
                                             room=Memory.map[exitroom];
                                             //Memory.map[previousroom].exit
                                             if (room){
-                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom);
-                                                console.log(Game.time-room.lastseentime);
+                                                
+                                                //console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
-                                                console.log("TRUE3");
+                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff);
+                                                //console.log("TRUE3");
                                             
                                             } else {
-                                                console.log("FALSE3");
+                                                //console.log("FALSE3");
                                             }
                                         
                                         }
