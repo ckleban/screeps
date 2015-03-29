@@ -194,16 +194,19 @@ var role_arena = {
                 return object.hitsMax < 999 && object.energy>0;
             }
 		});
-        if (target){
-            creep.moveTo(target);
-            
-        } else if (creep.energy > 1) {
+
+        if (creep.energy > 1) {
                 //Game.STRUCTURE_PORTAL
                 var portal = creep.pos.findNearest(Game.STRUCTURES);
                 if (portal){
                     creep.moveTo(portal);
                     creep.transferEnergy(portal);
                 } 
+
+            
+        } else if (target){
+                creep.moveTo(target);
+                        
             
         } else if (energy) {
                     
