@@ -61,7 +61,7 @@ var role_arena = {
                         console.log("-------");
                         console.log(JSON.stringify(bestpos, null, 4));
                         console.log(bestexit);
-                        consoe.log("-------");
+                        console.log("-------");
                     
                         
                                           
