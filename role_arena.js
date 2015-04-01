@@ -245,9 +245,10 @@ var role_arena = {
                 
                 var route2 = Game.map.findRoute(creep.room, Game.creeps.GladRanger.room);
                 //console.log('Now heading to room '+route[0].room);
-                var exit2 = creep.pos.findClosest(route2[0].exit);
-                creep.moveTo(exit2);
-                
+                if (route2[0]){
+                    var exit2 = creep.pos.findClosest(route2[0].exit);
+                    creep.moveTo(exit2);
+                }
                 
                 
                 
