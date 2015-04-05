@@ -13,7 +13,10 @@ var role_arena = {
             //console.log(creep.room.name + " - " + creep.memory.room.name);
             if (currentroom==previousroom){
                 //console.log("SAME ROOM");
-                Memory.map[previousroom].exit = {}; 
+                
+                // line to erase all map memory
+                
+                //Memory.map[previousroom].exit = {}; 
             } else {
                 
                 console.log("NEW ROOM");
