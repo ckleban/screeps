@@ -23,10 +23,13 @@ var role_arena = {
                 
                 // if new room, update map object showing which rooms are connected to what other rooms  
                 if (!Memory.map[previousroom].exit){
-                    Memory.map[previousroom].exit = {};   
+                    Memory.map[previousroom].exit = {};  
+                    console.log("SETTING MAP VAR");
                 }
-                Memory.map[previousroom].exit[creep.memory.leaving]=currentroom;
-                
+                if (creep.memory.leaving){
+                    Memory.map[previousroom].exit[creep.memory.leaving]=currentroom;
+                    console.log("SETTING PREVIOUS ROOM EXIT" + previousroom + creep.memory.leaving + currentroom);
+                }
             }
             
             
@@ -156,8 +159,12 @@ var role_arena = {
                         // for now, ust pick one
                         //var leave = exitlocations[0];
                         creep.moveTo(bestpos);
-                        creep.memory.leaving=bestexit;
                         
+                        if (bestexit===0){
+                            creep.memory.leaving=null;
+                        } else {
+                            creep.memory.leaving=bestexit;
+                        }
                     }
 
                         
