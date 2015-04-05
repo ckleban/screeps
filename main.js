@@ -317,6 +317,9 @@ for(var name in Game.creeps) {
 		require('role_builder').base(creep);
 	}	
 
+    
+    
+    
     if(creep.room.mode==Game.MODE_ARENA) {
         //var mappie = Game.rooms;
         //console.log(JSON.stringify(creep, null, 4));
