@@ -31,8 +31,8 @@ var role_arena = {
                     console.log("SETTING PREVIOUS ROOM EXIT" + previousroom + creep.memory.leaving + currentroom);
                 }
             } else {
-                console.log("OLDDDDDDD ROOM");
-                Memory.map[previousroom].exit = {};   
+                //console.log("OLDDDDDDD ROOM");
+                //Memory.map[previousroom].exit = {};   
                 
             }
             
