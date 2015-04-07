@@ -55,7 +55,7 @@ var role_arena = {
             });
             
             if(avoids.length > 0) {
-                var avoid_positions = {};
+                var avoid_positions = new Array();
                 for (var l in targets) {
                     var target = targets[l];
                     avoid_positions.push(target.pos);
