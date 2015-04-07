@@ -48,7 +48,7 @@ var role_arena = {
             
             // find places to avoid (IE, bad guys)
             
-            var avoids = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3, {
+            var avoids = creep.pos.findInRange(Game.HOSTILE_CREEPS, 30, {
                 filter: function(object) {
                     return object.hits > 99 && object.id!=creep.id;
                 }    
@@ -62,11 +62,11 @@ var role_arena = {
                 }
                 //creep.rangedHeal(best_target);
                 //creep.moveTo(best_target);
+                console.log(JSON.stringify(avoid_positions, null, 4));
             } else {
             
             
             }
-            console.log(JSON.stringify(avoid_positions, null, 4));
                         
             
             
