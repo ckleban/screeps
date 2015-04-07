@@ -61,9 +61,12 @@ var role_arena = {
                     avoid_positions.push(avoider.pos);
                     
                     //
-                    var new_position = avoider.pos;
+                    
+                    var new_position = Game.rooms.sim.getPositionAt(avoider.pos.x+1000,avoider.pos.y+1000);
+                    
+                    //var new_position = avoider.pos;
                     //new_position.x=new_position.x+1;
-                    new_position.x=9999;
+                    //new_position.x=9999;
                     avoid_positions.push(new_position);
                     
                 }
