@@ -150,7 +150,7 @@ var role_arena = {
                                                 
                                                 //console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
-                                                hasenergy=room.energy
+                                                hasenergy=room.energy;
                                                 
                                                 
                                                 //console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff + " energy: "+hasenergy);
