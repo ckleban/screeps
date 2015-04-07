@@ -56,9 +56,9 @@ var role_arena = {
             
             if(avoids.length > 0) {
                 var avoid_positions = new Array();
-                for (var l in targets) {
-                    var target = targets[l];
-                    avoid_positions.push(target.pos);
+                for (var l in avoids) {
+                    var avoider = avoids[l];
+                    avoid_positions.push(avoider.pos);
                 }
                 //creep.rangedHeal(best_target);
                 //creep.moveTo(best_target);
