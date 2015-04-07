@@ -74,7 +74,9 @@ var role_arena = {
                                 
                                 avoid_positions.push(new_position);     
                             } else {
-                                console.log("NULL POS FOUND");   
+                                console.log("NULL POS FOUND");  
+                                console.log(JSON.stringify(new_position, null, 4));
+                            
                             }
                         }
                     }
