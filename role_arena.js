@@ -138,7 +138,9 @@ var role_arena = {
                                                 //console.log(Game.time-room.lastseentime);
                                                 timediff=Game.time-room.lastseentime;
                                                 hasenergy=room.energy
-                                                console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff + " energy: "+hasenergy);
+                                                
+                                                
+                                                //console.log(creep.room.name + " exit:"+entry+"goes to room:"+exitroom+" timediff: "+timediff + " energy: "+hasenergy);
                                                 //console.log("TRUE3");
                                             
                                             } else {
@@ -186,7 +188,7 @@ var role_arena = {
                         console.log("-------");
                         */
                         
-                        console.log("Going to Exit:" + bestexit);
+                        //console.log("Going to Exit:" + bestexit);
                  
                         
                         /// put logic here to find bet exit
