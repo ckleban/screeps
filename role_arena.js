@@ -64,8 +64,8 @@ var role_arena = {
                     //
                     
                     // 
-                    for (xx = -3; xx < 4; xx++) { 
-                        for (yy = -3; yy < 4; yy++) { 
+                    for (xx = -4; xx < 5; xx++) { 
+                        for (yy = -4; yy < 5; yy++) { 
                             //console.log(xx);
                             //console.log(yy);
                             var new_position = creep.room.getPositionAt(avoider.pos.x+xx,avoider.pos.y+yy);
