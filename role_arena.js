@@ -8,6 +8,10 @@ var role_arena = {
             //console.log(creep);
             
             
+            
+            
+            
+            
             var currentroom=creep.room.name;
             var previousroom=creep.memory.room.name;
             //console.log(creep.room.name + " - " + creep.memory.room.name);
@@ -38,6 +42,32 @@ var role_arena = {
             
             
             creep.memory.leaving=0;
+            
+            
+            
+            
+            // find places to avoid (IE, bad guys)
+            
+            var avoids = creep.pos.findInRange(Game.HOSTILE_CREEPS, 3, {
+                filter: function(object) {
+                    return object.hits > 99 && object.id!=creep.id;
+                }    
+            });
+            
+            if(avoids.length > 0) {
+                var avoid_positions = {};
+                for (var l in targets) {
+                    var target = targets[l];
+                    avoid_positions.push(target.pos);
+                }
+                //creep.rangedHeal(best_target);
+                //creep.moveTo(best_target);
+            } else {
+            
+            
+            }
+            console.log(JSON.stringify(avoid_positions, null, 4));
+                        
             
             
             
