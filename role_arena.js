@@ -53,9 +53,9 @@ var role_arena = {
                     return object.hits > 99 && object.id!=creep.id;
                 }    
             });
-            
+            var avoid_positions = new Array();
+                
             if(avoids.length > 0) {
-                var avoid_positions = new Array();
                 for (var l in avoids) {
                     var avoider = avoids[l];
                     avoid_positions.push(avoider.pos);
