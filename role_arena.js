@@ -71,7 +71,8 @@ var role_arena = {
                     }
                    
                 }
-                console.log(JSON.stringify(avoid_positions, null, 4));
+                //console.log(JSON.stringify(avoid_positions, null, 4));
+                console.log(avoid_positions.length);
             } else {
             
             
