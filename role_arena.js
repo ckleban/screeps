@@ -227,21 +227,28 @@ var role_arena = {
                         //simple move without avoiding bad guys:
                         //creep.moveTo(bestpos);
                         
-                        //avoid bad guys:
-                        if (avoid_positions){
-                            var path = creep.pos.findPathTo(bestpos, {avoid:avoid_positions});
-                            if( path.length ) {
-                                creep.move(path[0].direction);
-                            }        
-                            
-                        }
+
                         
                         
                         
                         if (bestexit===0){
                             creep.memory.leaving=null;
                         } else {
+                            
+                            
                             creep.memory.leaving=bestexit;
+                            //avoid bad guys:
+                            if (avoid_positions){
+                                var path = creep.pos.findPathTo(bestpos, {avoid:avoid_positions});
+                                if( path.length ) {
+                                    creep.move(path[0].direction);
+                                }        
+                            
+                            }
+                            
+                            
+                            
+                            
                         }
                     }
 
