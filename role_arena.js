@@ -64,12 +64,12 @@ var role_arena = {
                     //
                     
                     // 
-                    for (xx = -3; xx < 3; xx++) { 
-                        for (yy = -3; yy < 3; yy++) { 
-                            console.log(xx);
-                            console.log(yy);
+                    for (xx = -3; xx < 4; xx++) { 
+                        for (yy = -3; yy < 4; yy++) { 
+                            //console.log(xx);
+                            //console.log(yy);
                             var new_position = creep.room.getPositionAt(avoider.pos.x+xx,avoider.pos.y+yy);
-                            console.log(JSON.stringify(new_position, null, 4));
+                            //console.log(JSON.stringify(new_position, null, 4));
                             if (new_position!=null) {
                                 
                                 avoid_positions.push(new_position);     
