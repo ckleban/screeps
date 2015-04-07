@@ -62,16 +62,15 @@ var role_arena = {
                     
                     //
                     
-                    var new_position = creep.room.getPositionAt(avoider.pos.x+1,avoider.pos.y+1);
-                    
-                    //var new_position = avoider.pos;
-                    //new_position.x=new_position.x+1;
-                    //new_position.x=9999;
-                    avoid_positions.push(new_position);
-                    
+                    // 
+                    for (xx = -3; xx < 3; xx++) { 
+                        for (yy = -3; yy < 3; yy++) { 
+                            var new_position = creep.room.getPositionAt(avoider.pos.x+xx,avoider.pos.y+yy);
+                            avoid_positions.push(new_position);       
+                        }
+                    }
+                   
                 }
-                //creep.rangedHeal(best_target);
-                //creep.moveTo(best_target);
                 console.log(JSON.stringify(avoid_positions, null, 4));
             } else {
             
