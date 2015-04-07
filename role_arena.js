@@ -62,7 +62,7 @@ var role_arena = {
                     
                     //
                     
-                    var new_position = creep.room.getPositionAt(avoider.pos.x+1000,avoider.pos.y+1000);
+                    var new_position = creep.room.getPositionAt(avoider.pos.x+1,avoider.pos.y+1);
                     
                     //var new_position = avoider.pos;
                     //new_position.x=new_position.x+1;
