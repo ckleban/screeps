@@ -95,7 +95,7 @@ var role_arena = {
                     creep.moveTo(target);
                     creep.pickup(target);
                 
-                // else, if bad guy, move to bad guy
+                // else, if bad guy with energy, move to bad guy
                 } else {
                     var target = creep.pos.findClosest(Game.HOSTILE_CREEPS, {
                         filter: function(object) {
@@ -129,6 +129,9 @@ var role_arena = {
                             var exit = creep.pos.findClosest(entry);
                             
                             if (exit) {    
+                                                           
+                                //var path = creep.pos.findPathTo(exit.pos, {ignore:avoid_positions);
+                                
                                 
                                 var path = creep.pos.findPathTo(exit.pos);
                                 if( path.length ) {
@@ -204,7 +207,21 @@ var role_arena = {
                         /// put logic here to find bet exit
                         // for now, ust pick one
                         //var leave = exitlocations[0];
-                        creep.moveTo(bestpos);
+                        
+                        
+                        
+                        
+                        
+                        //simple move without avoiding bad guys:
+                        //creep.moveTo(bestpos);
+                        
+                        //avoid bad guys:
+                        var path = creep.pos.findPathTo(bestpos, {ignore:avoid_positions});
+                        if( path.length ) {
+                            creep.move(path[0].direction);
+                        }        
+                        
+                        
                         
                         if (bestexit===0){
                             creep.memory.leaving=null;
