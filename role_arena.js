@@ -59,7 +59,7 @@ var role_arena = {
             if(avoids.length > 0) {
                 for (var l in avoids) {
                     var avoider = avoids[l];
-                    avoid_positions.push(avoider.pos);
+                    //avoid_positions.push(avoider.pos);
                     
                     //
                     
