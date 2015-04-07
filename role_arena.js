@@ -62,7 +62,8 @@ var role_arena = {
                     
                     //
                     var new_position = avoider.pos;
-                    new_position.x=new_position.x+1;
+                    //new_position.x=new_position.x+1;
+                    new_position.x=9999;
                     avoid_positions.push(new_position);
                     
                 }
