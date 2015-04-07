@@ -67,13 +67,19 @@ var role_arena = {
                     for (xx = -3; xx < 3; xx++) { 
                         for (yy = -3; yy < 3; yy++) { 
                             var new_position = creep.room.getPositionAt(avoider.pos.x+xx,avoider.pos.y+yy);
-                            avoid_positions.push(new_position);       
+                            if (new_position) {
+                                
+                                avoid_positions.push(new_position);     
+                            } else {
+                                console.log("NULL POS FOUND");   
+                            }
                         }
                     }
                    
                 }
-                //console.log(JSON.stringify(avoid_positions, null, 4));
                 console.log(avoid_positions.length);
+                //console.log(JSON.stringify(avoid_positions, null, 4));
+                
             } else {
             
             
